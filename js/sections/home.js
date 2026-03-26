@@ -39,6 +39,7 @@ function renderHome() {
     { emoji: '🗣️', label: 'Frasario', href: '#/frasario' },
     { emoji: '🏥', label: 'SOS', href: '#/sos' },
     { emoji: '🚗', label: 'Veicolo', href: '#/veicolo' },
+    { emoji: '🧭', label: 'Navigazione', href: '#/navigazione' },
     { emoji: '🏔️', label: 'Altitudine', href: '#/altitudine' },
     { emoji: '🗺️', label: 'GPS', href: '#/gps' },
     { emoji: '📋', label: 'Info', href: '#/info' },

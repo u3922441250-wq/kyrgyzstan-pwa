@@ -22,7 +22,8 @@
     '#/gps':         renderGps,
     '#/info':        renderInfo,
     '#/strade':      renderRoads,
-    '#/veicolo':     renderVehicle
+    '#/veicolo':     renderVehicle,
+    '#/navigazione': renderNavigation
   };
 
   /* ---- Helpers ---- */
