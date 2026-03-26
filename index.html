@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1a5c38">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KG 2025">
+  <meta name="description" content="Guida di viaggio offline per il Kirghizistan 2025">
+  <title>Kyrgyzstan 2025</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <h1 class="app-title">KYRGYZSTAN 2025</h1>
+    <button class="sos-btn" id="sos-btn" aria-label="SOS Emergenza" onclick="location.hash='#/sos'">SOS</button>
+  </header>
+
+  <main id="app" class="app-main" role="main"></main>
+
+  <nav class="bottom-nav" id="bottom-nav" role="navigation" aria-label="Navigazione" hidden>
+    <button class="nav-back-btn" id="nav-back-btn" aria-label="Torna alla Home" onclick="location.hash='#/'">
+      <span class="nav-back-icon">←</span>
+      <span class="nav-back-label">Home</span>
+    </button>
+  </nav>
+
+  <script src="js/db.js?v=3"></script>
+  <script src="js/data.js?v=3"></script>
+  <script src="js/editable.js?v=3"></script>
+  <script src="js/sections/home.js?v=3"></script>
+  <script src="js/sections/itinerary.js?v=3"></script>
+  <script src="js/sections/checklist.js?v=3"></script>
+  <script src="js/sections/budget.js?v=3"></script>
+  <script src="js/sections/phrasebook.js?v=3"></script>
+  <script src="js/sections/sos.js?v=3"></script>
+  <script src="js/sections/drone.js?v=3"></script>
+  <script src="js/sections/altitude.js?v=3"></script>
+  <script src="js/sections/gps.js?v=3"></script>
+  <script src="js/sections/info.js?v=3"></script>
+  <script src="js/sections/roads.js?v=3"></script>
+  <script src="js/sections/vehicle.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
