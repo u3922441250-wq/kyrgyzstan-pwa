@@ -24,7 +24,7 @@ function renderRoads() {
   html += '<div class="card-title">' + cr.titolo + '</div>';
   html += '<ul style="padding-left:18px;">';
   for (var i = 0; i < cr.strade.length; i++) {
-    html += '<li style="margin-bottom:6px;color:var(--color-danger);font-weight:600;">';
+    html += '<li style="margin-bottom:6px;color:var(--color-danger);font-weight:600;cursor:pointer;" onclick="showSurvivalRate(\'' + cr.strade[i].replace(/'/g, "\\'") + '\')">';
     html += '❌ ' + cr.strade[i] + '</li>';
   }
   html += '</ul></div>';

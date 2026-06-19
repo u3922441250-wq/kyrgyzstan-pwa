@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160">
+  <!-- Golden Eagle in flight - realistic silhouette style -->
+  <defs>
+    <linearGradient id="eg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8B6914"/>
+      <stop offset="50%" stop-color="#5C4033"/>
+      <stop offset="100%" stop-color="#3B2716"/>
+    </linearGradient>
+  </defs>
+  <!-- Body -->
+  <ellipse cx="100" cy="80" rx="22" ry="14" fill="url(#eg)"/>
+  <!-- Head -->
+  <ellipse cx="125" cy="72" rx="10" ry="8" fill="#5C4033"/>
+  <!-- Beak -->
+  <path d="M135,72 L142,74 L135,76 Z" fill="#F4A300"/>
+  <!-- Eye -->
+  <circle cx="130" cy="71" r="2" fill="#FFD700"/>
+  <circle cx="130.5" cy="71" r="1" fill="#000"/>
+  <!-- Left wing (top) -->
+  <path d="M95,75 Q60,30 15,45 Q25,50 40,52 Q55,54 75,65 Z" fill="url(#eg)"/>
+  <!-- Left wing feathers -->
+  <path d="M15,45 L8,42 L18,48" fill="#3B2716" opacity="0.6"/>
+  <path d="M22,47 L12,43 L24,50" fill="#3B2716" opacity="0.5"/>
+  <path d="M30,49 L20,44 L32,52" fill="#3B2716" opacity="0.4"/>
+  <!-- Right wing (top) -->
+  <path d="M105,75 Q140,30 185,45 Q175,50 160,52 Q145,54 125,65 Z" fill="url(#eg)"/>
+  <!-- Right wing feathers -->
+  <path d="M185,45 L192,42 L182,48" fill="#3B2716" opacity="0.6"/>
+  <path d="M178,47 L188,43 L176,50" fill="#3B2716" opacity="0.5"/>
+  <path d="M170,49 L180,44 L168,52" fill="#3B2716" opacity="0.4"/>
+  <!-- Tail -->
+  <path d="M78,85 Q70,105 60,115 Q75,110 80,100 Q82,95 80,88 Z" fill="#5C4033"/>
+  <path d="M82,87 Q78,108 72,118 Q82,112 84,102 Z" fill="#3B2716" opacity="0.5"/>
+  <!-- Talons -->
+  <path d="M92,92 L88,100 L86,98 L90,92" fill="#F4A300" stroke="#8B6914" stroke-width="0.5"/>
+  <path d="M108,92 L112,100 L114,98 L110,92" fill="#F4A300" stroke="#8B6914" stroke-width="0.5"/>
+  <!-- Wing detail lines -->
+  <path d="M60,55 Q80,60 95,75" fill="none" stroke="#3B2716" stroke-width="0.8" opacity="0.4"/>
+  <path d="M140,55 Q120,60 105,75" fill="none" stroke="#3B2716" stroke-width="0.8" opacity="0.4"/>
+  <!-- Chest feathers -->
+  <ellipse cx="105" cy="82" rx="8" ry="6" fill="#8B6914" opacity="0.5"/>
+</svg>

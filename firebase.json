@@ -1,0 +1,9 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "android/**", "AI images/**", "build-www.js", "package*.json", "capacitor.config.json", "ANDROID_BUILD.md"],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" }
+    ]
+  }
+}

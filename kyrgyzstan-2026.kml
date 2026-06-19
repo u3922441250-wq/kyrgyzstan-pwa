@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Kyrgyzstan Road Trip 2026</name>
+  <description>30 maggio - 12 giugno 2026 — Leo &amp; Edu</description>
+
+  <Style id="day"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-circle.png</href></Icon></IconStyle></Style>
+  <Style id="poi"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon></IconStyle></Style>
+  <Style id="fuel"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon></IconStyle></Style>
+  <Style id="permit"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/purple-circle.png</href></Icon></IconStyle></Style>
+
+  <!-- DAY 1 — Bishkek -->
+  <Folder><name>G1 — Bishkek (30 mag)</name>
+    <Placemark><name>Aeroporto Manas</name><description>SIM O!, cambio soldi</description><styleUrl>#day</styleUrl><Point><coordinates>74.4776,43.0553</coordinates></Point></Placemark>
+    <Placemark><name>Osh Bazaar Bishkek</name><description>Tanica, compressore, corda traino</description><styleUrl>#poi</styleUrl><Point><coordinates>74.5900,42.8700</coordinates></Point></Placemark>
+    <Placemark><name>Piazza Ala-Too</name><description>Centro Bishkek</description><styleUrl>#poi</styleUrl><Point><coordinates>74.5698,42.8746</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 2 — Bishkek → Karakol -->
+  <Folder><name>G2 — Bishkek → Karakol (31 mag)</name>
+    <Placemark><name>Ala-Archa NP</name><description>Hike Ak-Sai Waterfall</description><styleUrl>#poi</styleUrl><Point><coordinates>74.4847,42.6464</coordinates></Point></Placemark>
+    <Placemark><name>Konorchek Canyon</name><description>Red canyon, hike 1-2h</description><styleUrl>#poi</styleUrl><Point><coordinates>75.8500,42.6833</coordinates></Point></Placemark>
+    <Placemark><name>Mars Canyon</name><description>Paesaggio marziano</description><styleUrl>#poi</styleUrl><Point><coordinates>75.8200,42.6700</coordinates></Point></Placemark>
+    <Placemark><name>Burana Tower</name><description>Minareto XI sec, Via della Seta</description><styleUrl>#poi</styleUrl><Point><coordinates>75.2503,42.7472</coordinates></Point></Placemark>
+    <Placemark><name>Karakol</name><description>Arrivo sera</description><styleUrl>#day</styleUrl><Point><coordinates>78.3936,42.4907</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 3 — Jyrgalan -->
+  <Folder><name>G3 — Jyrgalan Valley (1 giu)</name>
+    <Placemark><name>Jyrgalan</name><description>Waterfall Trail / Kok-Bel Pass</description><styleUrl>#poi</styleUrl><Point><coordinates>79.2094,42.8186</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 4 — Altyn-Arashan -->
+  <Folder><name>G4 — Altyn-Arashan (2 giu)</name>
+    <Placemark><name>Trailhead Altyn-Arashan</name><description>Hike 3-4h, +800m</description><styleUrl>#poi</styleUrl><Point><coordinates>78.5261,42.6592</coordinates></Point></Placemark>
+    <Placemark><name>Hot Springs 2600m</name><description>Sorgenti termali segrete</description><styleUrl>#poi</styleUrl><Point><coordinates>78.5700,42.7500</coordinates></Point></Placemark>
+    <Placemark><name>Red Hills</name><description>Colline rosse</description><styleUrl>#poi</styleUrl><Point><coordinates>78.5000,42.0000</coordinates></Point></Placemark>
+    <Placemark><name>Kol-Ukok</name><description>Lago alpino, horse riding</description><styleUrl>#poi</styleUrl><Point><coordinates>78.3000,42.0500</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 5 — Sary-Jaz -->
+  <Folder><name>G5 — Sary-Jaz Valley (3 giu) ⚠️PERMESSO</name>
+    <Placemark><name>Sary-Jaz Valley</name><description>PERMESSO CONFINE! Zona remota</description><styleUrl>#permit</styleUrl><Point><coordinates>79.5000,42.5000</coordinates></Point></Placemark>
+    <Placemark><name>Inylchek area</name><description>Campeggio stelle</description><styleUrl>#poi</styleUrl><Point><coordinates>79.8000,42.2500</coordinates></Point></Placemark>
+    <Placemark><name>Kara-Tash</name><description>"Islanda del Kirghizistan"</description><styleUrl>#poi</styleUrl><Point><coordinates>78.8000,42.1500</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 6 — South Issyk-Kul -->
+  <Folder><name>G6 — Sponda Sud Issyk-Kul (4 giu)</name>
+    <Placemark><name>Ak-Say Canyon</name><description>Golden hour sul lago!</description><styleUrl>#poi</styleUrl><Point><coordinates>76.8000,42.3500</coordinates></Point></Placemark>
+    <Placemark><name>Seven Bulls Rock</name><description>Formazioni rocciose</description><styleUrl>#poi</styleUrl><Point><coordinates>77.5500,42.2800</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 7 — Barskoon + Skazka -->
+  <Folder><name>G7 — Barskoon + Skazka (5 giu)</name>
+    <Placemark><name>Barskoon Waterfall</name><description>Cascata + gorge</description><styleUrl>#poi</styleUrl><Point><coordinates>77.6000,42.1500</coordinates></Point></Placemark>
+    <Placemark><name>Arabel Plateau</name><description>Campeggio altopiano</description><styleUrl>#poi</styleUrl><Point><coordinates>77.5000,41.9500</coordinates></Point></Placemark>
+    <Placemark><name>Fairy Tale Canyon (Skazka)</name><description>Formazioni rosse</description><styleUrl>#poi</styleUrl><Point><coordinates>77.2575,42.3847</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 8 — Bokonbayevo -->
+  <Folder><name>G8 — Eagle Hunting (6 giu)</name>
+    <Placemark><name>CBT Bokonbayevo</name><description>Eagle hunting demo</description><styleUrl>#day</styleUrl><Point><coordinates>76.9900,42.1208</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 9 — Song-Kul -->
+  <Folder><name>G9 — Song-Kul (7 giu)</name>
+    <Placemark><name>CBT Kochkor</name><description>ULTIMO CARBURANTE! Feltro</description><styleUrl>#fuel</styleUrl><Point><coordinates>75.7592,42.0133</coordinates></Point></Placemark>
+    <Placemark><name>Song-Kul Lake</name><description>3016m, yurta camp</description><styleUrl>#day</styleUrl><Point><coordinates>75.1500,41.8333</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 10 — Song-Kul full -->
+  <Folder><name>G10 — Song-Kul Completa (8 giu)</name>
+    <Placemark><name>Song-Kul</name><description>Cavalli, kumys, drone, stargazing</description><styleUrl>#day</styleUrl><Point><coordinates>75.1500,41.8333</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 11 — Tash Rabat -->
+  <Folder><name>G11 — Naryn → Tash Rabat (9 giu)</name>
+    <Placemark><name>Naryn</name><description>ULTIMO ATM! Benzina</description><styleUrl>#fuel</styleUrl><Point><coordinates>76.0014,41.4287</coordinates></Point></Placemark>
+    <Placemark><name>Kok-Kiya Canyon</name><description>Off the beaten track</description><styleUrl>#poi</styleUrl><Point><coordinates>75.5000,41.0000</coordinates></Point></Placemark>
+    <Placemark><name>Tash Rabat</name><description>Caravanserraglio XV sec, 3200m</description><styleUrl>#day</styleUrl><Point><coordinates>75.2847,40.8453</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 12 — Kel-Suu -->
+  <Folder><name>G12 — Kel-Suu (10 giu) ⚠️PERMESSO</name>
+    <Placemark><name>At-Bashy</name><description>Noleggio UAZ</description><styleUrl>#poi</styleUrl><Point><coordinates>75.7986,41.1714</coordinates></Point></Placemark>
+    <Placemark><name>Kel-Suu Lake</name><description>PERMESSO CONFINE! Lago turchese 3500m</description><styleUrl>#permit</styleUrl><Point><coordinates>75.0742,40.5811</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 13 — Kazarman → Arslanbob -->
+  <Folder><name>G13 — Kazarman → Arslanbob (11 giu)</name>
+    <Placemark><name>Kazarman</name><description>Tappa intermedia</description><styleUrl>#poi</styleUrl><Point><coordinates>74.0333,41.4000</coordinates></Point></Placemark>
+    <Placemark><name>Arslanbob</name><description>Foresta noci, homestay</description><styleUrl>#day</styleUrl><Point><coordinates>72.9389,41.3311</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- DAY 14 — Arslanbob → Osh → Bishkek -->
+  <Folder><name>G14 — Arslanbob → Osh → Bishkek (12 giu)</name>
+    <Placemark><name>Sulaiman-Too Osh</name><description>Montagna sacra UNESCO</description><styleUrl>#poi</styleUrl><Point><coordinates>72.7964,40.5278</coordinates></Point></Placemark>
+    <Placemark><name>Osh Bazaar</name><description>Mercato</description><styleUrl>#poi</styleUrl><Point><coordinates>72.8000,40.5333</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- EXTRA: Fuel Stations -->
+  <Folder><name>⛽ Punti Benzina Critici</name>
+    <Placemark><name>⛽ Bishkek (prima di partire)</name><styleUrl>#fuel</styleUrl><Point><coordinates>74.5900,42.8700</coordinates></Point></Placemark>
+    <Placemark><name>⛽ Karakol (ultimo prima di est)</name><styleUrl>#fuel</styleUrl><Point><coordinates>78.3936,42.4907</coordinates></Point></Placemark>
+    <Placemark><name>⛽ Kochkor (ultimo prima Song-Kul)</name><styleUrl>#fuel</styleUrl><Point><coordinates>75.7592,42.0133</coordinates></Point></Placemark>
+    <Placemark><name>⛽ Naryn (ultimo prima Tash Rabat)</name><styleUrl>#fuel</styleUrl><Point><coordinates>76.0014,41.4287</coordinates></Point></Placemark>
+  </Folder>
+
+  <!-- EXTRA: Border Permits Required -->
+  <Folder><name>📋 Zone Permesso Militare</name>
+    <Placemark><name>⚠️ Sary-Jaz Valley — PERMESSO</name><description>Zona militare confine Cina. Richiedere permesso in anticipo.</description><styleUrl>#permit</styleUrl><Point><coordinates>79.5000,42.5000</coordinates></Point></Placemark>
+    <Placemark><name>⚠️ Kel-Suu Lake — PERMESSO</name><description>Zona confine Cina. Organizzare tramite tour operator At-Bashy.</description><styleUrl>#permit</styleUrl><Point><coordinates>75.0742,40.5811</coordinates></Point></Placemark>
+  </Folder>
+
+</Document>
+</kml>

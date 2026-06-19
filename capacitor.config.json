@@ -1,0 +1,15 @@
+{
+  "appId": "com.kg2025.travel",
+  "appName": "Kyrgy",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#f5f5f0",
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  },
+  "plugins": {}
+}

@@ -9,8 +9,12 @@
 function renderDrone() {
   var wrapper = document.createElement('div');
   wrapper.className = 'section-content fade-in';
+  wrapper.innerHTML = '<h2 class="section-title">🚁 Info Droni</h2>' + renderDroneContent();
+  return wrapper;
+}
 
-  var html = '<h2 class="section-title">🚁 Info Droni</h2>';
+function renderDroneContent() {
+  var html = '';
 
   // Regulations
   html += '<div class="card"><div class="card-title">📋 Regolamenti</div>';
@@ -72,48 +76,12 @@ function renderDrone() {
   html += '<button class="btn btn-sm btn-secondary drone-reset-btn" data-section="drone-tips" style="margin-top:6px;display:none;" type="button">↩️ Reset</button>';
   html += '</div>';
 
-  wrapper.innerHTML = html;
+  // Pointer to Saved Places per top spot list completa
+  html += '<div class="card" style="background:var(--color-bg-soft);">';
+  html += '<p style="font-size:0.85rem;margin:0;">📍 <strong>Stargazing</strong> e <strong>Top Yurt Stays</strong> sono in <a href="#/gps">📌 Saved Places</a> con coordinate cliccabili.</p>';
+  html += '</div>';
 
-  // Make editable after DOM ready
-  setTimeout(function () {
-    var sections = ['drone-regolamenti', 'drone-nofly', 'drone-tips'];
-    for (var i = 0; i < sections.length; i++) {
-      (function (sectionId) {
-        var el = document.getElementById(sectionId);
-        if (!el) return;
-        var originalHtml = el.innerHTML;
+  html += '</div>';
 
-        DB.get('edits', sectionId).then(function (record) {
-          if (record && record.value) {
-            el.innerHTML = record.value;
-          }
-          Editable.make(el, sectionId, originalHtml);
-
-          var resetBtn = el.parentElement.querySelector('.drone-reset-btn[data-section="' + sectionId + '"]');
-          if (resetBtn) {
-            function checkModified() {
-              if (el.innerHTML.trim() !== originalHtml.trim()) {
-                resetBtn.style.display = '';
-              } else {
-                resetBtn.style.display = 'none';
-              }
-            }
-            el.addEventListener('input', checkModified);
-            checkModified();
-
-            resetBtn.addEventListener('click', function () {
-              Editable.reset(sectionId).then(function () {
-                el.innerHTML = originalHtml;
-                el.classList.remove('modified');
-                resetBtn.style.display = 'none';
-                showToast('Ripristinato ✓');
-              });
-            });
-          }
-        });
-      })(sections[i]);
-    }
-  }, 0);
-
-  return wrapper;
+  return html;
 }

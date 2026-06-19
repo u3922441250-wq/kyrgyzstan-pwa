@@ -7,7 +7,10 @@
  */
 
 function makeGpsLink(name, lat, lng) {
-  return '<a class="gps-link" href="https://www.google.com/maps?q=' + lat + ',' + lng + '" target="_blank" rel="noopener">' + name + ' (' + lat.toFixed(4) + ', ' + lng.toFixed(4) + ')</a>';
+  // Use Google Maps search with place name + coordinates for better results
+  var encodedName = encodeURIComponent(name);
+  var url = 'https://www.google.com/maps/search/' + encodedName + '/@' + lat + ',' + lng + ',14z';
+  return '<a class="gps-link" href="' + url + '" target="_blank" rel="noopener">' + name + '</a>';
 }
 
 function renderItinerary() {
@@ -69,7 +72,23 @@ function renderItinerary() {
           if (act.time) {
             html += '<div class="timeline-time">' + act.time + '</div>';
           }
-          html += '<div class="timeline-desc editable" contenteditable="true" data-default-idx="' + a + '" data-day="' + dayNum + '">' + act.description + '</div>';
+          html += '<div style="display:flex;align-items:flex-start;gap:6px;flex:1;">';
+          html += '<div class="timeline-desc editable" contenteditable="true" data-default-idx="' + a + '" data-day="' + dayNum + '" style="flex:1;">' + act.description + '</div>';
+          if (act.details) {
+            html += '<button type="button" class="act-details-btn" data-day="' + dayNum + '" data-act-idx="' + a + '" style="background:none;border:1px solid var(--color-border);border-radius:50%;width:28px;height:28px;flex-shrink:0;cursor:pointer;font-size:0.85rem;line-height:1;padding:0;" title="Dettagli">ℹ️</button>';
+          }
+          html += '</div>';
+
+          // Hidden details panel — appears under the activity when toggled
+          if (act.details) {
+            html += '<div class="act-details-panel" id="act-details-' + dayNum + '-' + a + '" style="display:none;margin:6px 0 8px 0;padding:10px 12px;background:rgba(0,0,0,0.04);border-left:3px solid var(--color-accent);border-radius:6px;font-size:0.85rem;line-height:1.5;">';
+            if (act.details.why)      html += '<div style="margin-bottom:6px;"><strong>Cos\'è:</strong> ' + act.details.why + '</div>';
+            if (act.details.duration) html += '<div style="margin-bottom:6px;"><strong>⏱️ Durata:</strong> ' + act.details.duration + '</div>';
+            if (act.details.cost)     html += '<div style="margin-bottom:6px;"><strong>💸 Costo:</strong> ' + act.details.cost + '</div>';
+            if (act.details.tip)      html += '<div><strong>💡 Tip:</strong> ' + act.details.tip + '</div>';
+            html += '</div>';
+          }
+
           html += '</div>';
         }
 
@@ -85,15 +104,30 @@ function renderItinerary() {
         html += '<button class="btn btn-sm btn-primary" id="add-activity-btn-' + dayNum + '" style="margin-top:8px;" type="button">+ Aggiungi attività</button>';
       }
 
-      // GPS coordinates
+      // GPS coordinates — with embedded Leaflet mini-map
       if (day.gps && day.gps.length > 0) {
-        html += '<h3 style="margin:12px 0 8px;font-size:1rem;">Coordinate GPS</h3>';
+        html += '<h3 style="margin:12px 0 8px;font-size:1rem;">📍 Punti del Giorno</h3>';
+
+        // Mini Leaflet map for this day's points
+        var dayMapId = 'day-mini-map-' + dayNum;
+        html += '<div id="' + dayMapId + '" data-day="' + dayNum + '" style="width:100%;height:200px;border-radius:8px;overflow:hidden;border:1px solid var(--color-border);background:#1a2332;margin-bottom:8px;"></div>';
+
+        // Links to Google Maps
         html += '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
         for (var g = 0; g < day.gps.length; g++) {
           var pt = day.gps[g];
           html += makeGpsLink(pt.name, pt.lat, pt.lng);
         }
         html += '</div>';
+
+        // Open all in Google Maps button
+        if (day.gps.length > 1) {
+          var gmapsDir = 'https://www.google.com/maps/dir/';
+          for (var gd = 0; gd < day.gps.length; gd++) {
+            gmapsDir += day.gps[gd].lat + ',' + day.gps[gd].lng + '/';
+          }
+          html += '<a class="btn btn-sm btn-accent" href="' + gmapsDir + '" target="_blank" style="margin-top:8px;width:100%;text-align:center;">🗺️ Apri percorso su Google Maps</a>';
+        }
       }
 
       // Notes textarea
@@ -160,6 +194,20 @@ function renderItinerary() {
         })(customEditables[ce]);
       }
 
+      // Activity details toggle (ℹ️ buttons)
+      var detailsBtns = container.querySelectorAll('.act-details-btn');
+      for (var dbI = 0; dbI < detailsBtns.length; dbI++) {
+        (function (btn) {
+          btn.addEventListener('click', function () {
+            var dn = btn.getAttribute('data-day');
+            var idx = btn.getAttribute('data-act-idx');
+            var panel = document.getElementById('act-details-' + dn + '-' + idx);
+            if (!panel) return;
+            panel.style.display = (panel.style.display === 'none' || !panel.style.display) ? 'block' : 'none';
+          });
+        })(detailsBtns[dbI]);
+      }
+
       // Delete custom activity buttons
       var deleteBtns = container.querySelectorAll('.delete-activity-btn');
       for (var db2 = 0; db2 < deleteBtns.length; db2++) {
@@ -213,7 +261,81 @@ function renderItinerary() {
           }, 500);
         });
       }
+
+      // Init Leaflet mini-map for this day
+      initDayMiniMap(dayNum, day);
     });
+  }
+
+  /**
+   * Init Leaflet mini-map for a specific day's GPS points.
+   * Tiles are cached by Service Worker after first online load.
+   */
+  function initDayMiniMap(dayNum, day) {
+    if (!day.gps || day.gps.length === 0) return;
+    var mapEl = document.getElementById('day-mini-map-' + dayNum);
+    if (!mapEl) return;
+
+    function build() {
+      mapEl.innerHTML = '';
+      var dayMap = L.map(mapEl, { zoomControl: true, attributionControl: false });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 14,
+        attribution: '© OSM'
+      }).addTo(dayMap);
+
+      // Route line
+      if (day.gps.length > 1) {
+        var routeCoords = [];
+        for (var rc = 0; rc < day.gps.length; rc++) {
+          routeCoords.push([day.gps[rc].lat, day.gps[rc].lng]);
+        }
+        L.polyline(routeCoords, { color: '#e8732a', weight: 3, opacity: 0.85, dashArray: '6,6' }).addTo(dayMap);
+      }
+
+      // Markers
+      for (var pi = 0; pi < day.gps.length; pi++) {
+        var pt = day.gps[pi];
+        var icon = L.divIcon({
+          className: 'custom-pin',
+          html: '<div style="width:14px;height:14px;background:#e74c3c;border:2.5px solid #fff;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.6);"></div>',
+          iconSize: [14, 14],
+          iconAnchor: [7, 7]
+        });
+        var marker = L.marker([pt.lat, pt.lng], { icon: icon }).addTo(dayMap);
+        var gmaps = 'https://www.google.com/maps/search/?api=1&query=' + pt.lat + ',' + pt.lng;
+        marker.bindPopup('<div style="font-weight:700;">' + pt.name + '</div><a href="' + gmaps + '" target="_blank" style="color:#e8732a;">📍 Google Maps</a>');
+      }
+
+      // Fit bounds
+      if (day.gps.length === 1) {
+        dayMap.setView([day.gps[0].lat, day.gps[0].lng], 11);
+      } else {
+        var bnds = [];
+        for (var bi = 0; bi < day.gps.length; bi++) bnds.push([day.gps[bi].lat, day.gps[bi].lng]);
+        dayMap.fitBounds(bnds, { padding: [20, 20] });
+      }
+    }
+
+    if (typeof L === 'undefined') {
+      // Lazy-load Leaflet (shared with maps.js)
+      if (!document.getElementById('leaflet-css')) {
+        var css = document.createElement('link');
+        css.id = 'leaflet-css';
+        css.rel = 'stylesheet';
+        css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(css);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      script.onload = build;
+      script.onerror = function() {
+        mapEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;padding:10px;font-size:0.8rem;opacity:0.7;">⚠️ Mappa non disponibile offline al primo avvio.</div>';
+      };
+      document.head.appendChild(script);
+    } else {
+      build();
+    }
   }
 
   function saveCustomActivities(dayNum, activities) {

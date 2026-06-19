@@ -3,48 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#1a5c38">
+  <meta name="theme-color" content="#1a1a1a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="KG 2025">
-  <meta name="description" content="Guida di viaggio offline per il Kirghizistan 2025">
-  <title>Kyrgyzstan 2025</title>
+  <meta name="description" content="Brutto coglione cieco, scarica la nostra app di viaggio">
+  <meta property="og:title" content="KYRGY">
+  <meta property="og:description" content="Brutto coglione cieco, scarica la nostra app di viaggio">
+  <meta property="og:image" content="https://kyrgy-app.netlify.app/icons/icon-512.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kyrgy-app.netlify.app">
+  <title>Kyrgy</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icons/icon-192.svg">
-  <link rel="stylesheet" href="css/app.css?v=3">
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/app.css?v=1.5">
 </head>
 <body>
+  <!-- Splash screen while app loads -->
+  <div id="splash-screen" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;background:#1a1008;transition:opacity 0.5s ease;overflow:hidden;">
+    <img src="icons/splash-logo.jpeg?v=3" alt="Kyrgy" style="width:100vw;height:100vh;object-fit:contain;display:block;">
+  </div>
+
+  <!-- Install banner - only shows in browser, not when installed as app -->
+  <div id="install-banner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:var(--color-accent);color:#fff;padding:12px 14px;font-size:0.85rem;font-weight:600;text-align:center;">
+    📲 Per installare: Chrome → ⋮ → "Aggiungi a schermata Home" · Safari → ⬆ → "Aggiungi a Home"
+    <button onclick="document.getElementById('install-banner').style.display='none';localStorage.setItem('kg-banner-dismissed','1')" style="background:none;border:none;color:#fff;font-size:1.1rem;margin-left:8px;cursor:pointer;">✕</button>
+  </div>
+  <script>
+    // Show banner only in browser (not installed PWA) and not dismissed
+    if (!window.matchMedia('(display-mode: standalone)').matches && !navigator.standalone && !localStorage.getItem('kg-banner-dismissed')) {
+      document.getElementById('install-banner').style.display = 'block';
+    }
+  </script>
+
   <header class="app-header" role="banner">
-    <h1 class="app-title">KYRGYZSTAN 2025</h1>
+    <img src="icons/logo-header.png?v=2" alt="Kyrgy" style="height:36px;border-radius:4px;margin-right:8px;cursor:pointer;" onclick="location.hash='#/'">
+    <h1 class="app-title" style="cursor:pointer;" onclick="location.hash='#/'">KYRGY</h1>
+    <img src="icons/header-right.png?v=3" alt="" id="header-car" style="height:36px;transform:scaleX(1);cursor:pointer;" onclick="animateCar()">
     <button class="sos-btn" id="sos-btn" aria-label="SOS Emergenza" onclick="location.hash='#/sos'">SOS</button>
   </header>
 
   <main id="app" class="app-main" role="main"></main>
 
   <nav class="bottom-nav" id="bottom-nav" role="navigation" aria-label="Navigazione" hidden>
-    <button class="nav-back-btn" id="nav-back-btn" aria-label="Torna alla Home" onclick="location.hash='#/'">
-      <span class="nav-back-icon">←</span>
+    <button class="nav-back-btn" id="nav-prev-btn" aria-label="Sezione precedente" onclick="navigateSection(-1)" style="min-width:40px;padding:8px;">
+      <span style="font-size:1.2rem;">←</span>
+    </button>
+    <button class="nav-back-btn" id="nav-back-btn" aria-label="Torna alla Home" onclick="location.hash='#/'" style="flex:1;">
+      <span class="nav-back-icon">🏠</span>
       <span class="nav-back-label">Home</span>
+    </button>
+    <button class="nav-back-btn" id="nav-next-btn" aria-label="Sezione successiva" onclick="navigateSection(1)" style="min-width:40px;padding:8px;">
+      <span style="font-size:1.2rem;">→</span>
     </button>
   </nav>
 
-  <script src="js/db.js?v=3"></script>
-  <script src="js/data.js?v=3"></script>
-  <script src="js/editable.js?v=3"></script>
-  <script src="js/sections/home.js?v=3"></script>
-  <script src="js/sections/itinerary.js?v=3"></script>
-  <script src="js/sections/checklist.js?v=3"></script>
-  <script src="js/sections/budget.js?v=3"></script>
-  <script src="js/sections/phrasebook.js?v=3"></script>
-  <script src="js/sections/sos.js?v=3"></script>
-  <script src="js/sections/drone.js?v=3"></script>
-  <script src="js/sections/altitude.js?v=3"></script>
-  <script src="js/sections/gps.js?v=3"></script>
-  <script src="js/sections/info.js?v=3"></script>
-  <script src="js/sections/roads.js?v=3"></script>
-  <script src="js/sections/vehicle.js?v=3"></script>
-  <script src="js/sections/navigation.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/db.js?v=1.5"></script>
+  <script src="js/sync-core.js?v=1.0"></script>
+  <script src="js/firebase-sync.js?v=1.4"></script>
+  <script src="js/data.js?v=1.7"></script>
+  <script src="js/editable.js?v=1.4"></script>
+  <script src="js/sections/home.js?v=1.4"></script>
+  <script src="js/sections/itinerary.js?v=1.6"></script>
+  <script src="js/sections/checklist.js?v=1.4"></script>
+  <script src="js/sections/budget.js?v=1.4"></script>
+  <script src="js/sections/phrasebook.js?v=1.6"></script>
+  <script src="js/sections/sos.js?v=1.4"></script>
+  <script src="js/sections/drone.js?v=1.6"></script>
+  <script src="js/sections/altitude.js?v=1.4"></script>
+  <script src="js/sections/gps.js?v=1.6"></script>
+  <script src="js/sections/info.js?v=1.7"></script>
+  <script src="js/sections/roads.js?v=1.4"></script>
+  <script src="js/sections/vehicle.js?v=1.4"></script>
+  <script src="js/sections/navigation.js?v=1.4"></script>
+  <script src="js/sections/documents.js?v=1.5"></script>
+  <script src="js/sections/before-leaving.js?v=1.4"></script>
+  <script src="js/sections/maps.js?v=1.6"></script>
+  <script src="js/sections/piatti.js?v=1.4"></script>
+  <script src="js/sections/extras.js?v=1.4"></script>
+  <script src="js/sections/giochi.js?v=1.4"></script>
+  <script src="js/app.js?v=1.4"></script>
+  <script src="js/game2.js?v=2"></script>
 </body>
 </html>

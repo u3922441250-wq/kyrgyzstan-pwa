@@ -1,6 +1,6 @@
 /**
- * data.js — Tutti i dati statici per Kyrgyzstan Travel PWA 2025
- * 15 giorni: 30 maggio – 13 giugno 2025
+ * data.js — Tutti i dati statici per Kyrgyzstan Travel PWA 2026
+ * 14 giorni: 30 maggio – 12 giugno 2026
  *
  * Variabili globali (vanilla JS, NO ES modules):
  *   ITINERARY, PHRASES, CHECKLIST, WAYPOINTS,
@@ -9,431 +9,810 @@
  */
 
 /* ============================================================
-   TASK 3.1 — ITINERARY (15 giorni)
+   TASK 3.1 — ITINERARY (14 giorni)
    ============================================================ */
 
 var ITINERARY = [
   // ── Giorno 1 ─────────────────────────────────────────────
   {
     day: 1,
-    date: "2025-05-30",
-    title: "Arrivo a Bishkek",
+    date: "2026-05-30",
+    title: "Bishkek",
     route: null,
     km: 0,
     driveTime: null,
     budget: 30,
     activities: [
-      { time: null, description: "Arrivo aeroporto Manas" },
-      { time: null, description: "Comprare SIM card O! all'aeroporto (~500 KGS per 10GB)" },
-      { time: null, description: "Cambiare soldi / ATM (~30,000-50,000 KGS)" },
-      { time: null, description: "Osh Bazaar: comprare equipaggiamento auto (tanica, compressore, corda traino)" },
-      { time: null, description: "Supermercato Frunze o Globus: scorte per la strada" },
-      { time: null, description: "Piazza Ala-Too, esplorare centro Bishkek" },
-      { time: null, description: "Cena: Navat o Faiza (plov, lagman, manti)" }
+      {
+        time: null,
+        description: "Arrivo aeroporto Manas (BSZ), SIM card O!, cambiare soldi",
+        details: {
+          why: "Manas (BSZ — ex FRU, codice cambiato il 9/5/2025) è 23 km a nord di Bishkek. È l'unico aeroporto internazionale del paese, niente altri scali a Bishkek città. SIM card O! o MegaCom in arrivo (~200 KGS, valida 30 giorni). Cambia il minimo qui (50 EUR), tassi peggiori che in centro.",
+          duration: "30-45 min in aeroporto, 30-40 min taxi al centro",
+          cost: "Taxi al centro 600-800 KGS (~6-8 EUR). SIM ~200 KGS. ATM Bakai/Optima all'arrivo.",
+          tip: "Non cambiare TUTTI i soldi qui — i cambiavalute in centro Bishkek (Tsum, viale Kievskaya) hanno tassi molto migliori."
+        }
+      },
+      {
+        time: null,
+        description: "Osh Bazaar: equipaggiamento auto (tanica, compressore, corda traino)",
+        details: {
+          why: "Il bazaar più grande di Bishkek. Qui compri tutto l'equipaggiamento auto a prezzi 1/3 rispetto Europa. Settore auto: lato sud-ovest del bazaar.",
+          duration: "1.5-2h",
+          cost: "Tanica 10L ~500 KGS, compressore 12V ~1500 KGS, corda traino 5T ~500 KGS, manometro ~200 KGS. Totale ~3000 KGS (~30 EUR).",
+          tip: "Apertura 7:00-19:00, chiuso lunedì. Borseggiatori: zaino davanti, contanti in tasca chiusa. Marshrutka 113/124/135 dal centro (10 KGS)."
+        }
+      },
+      {
+        time: null,
+        description: "Piazza Ala-Too, esplorare centro Bishkek",
+        details: {
+          why: "Cuore di Bishkek. Statua Manas, parlamento, museo storico, tutto in 200m. Cambio della guardia ogni ora.",
+          duration: "1-2h walk + soste",
+          tip: "Cambio guardia ogni ora 09:00-18:00. Bandiera issata 07:00, ammainata 18:00. Sera: fontane illuminate, gelato dai chioschi, gente locale."
+        }
+      },
+      {
+        time: null,
+        description: "Cena: Navat o Faiza",
+        details: {
+          why: "Navat = catena tradizionale kirghiza, atmosfera yurta moderna. Faiza = ristorante uiguro famoso per laghman tirato a mano.",
+          cost: "350-700 KGS a piatto",
+          tip: "Navat ha 4 sedi a Bishkek, la più centrale è in viale Chuy. Faiza è in Pravda 156 — prenota se sabato sera."
+        }
+      }
     ],
     gps: [
-      { name: "Aeroporto Manas", lat: 43.0553, lng: 74.4776 },
+      { name: "Aeroporto Manas (BSZ)", lat: 43.0553, lng: 74.4776 },
       { name: "Osh Bazaar Bishkek", lat: 42.8700, lng: 74.5900 },
       { name: "Piazza Ala-Too", lat: 42.8746, lng: 74.5698 }
     ],
     warnings: [],
-    accommodation: "Guesthouse Bishkek (€10-15pp)"
+    accommodation: "Tunduk Hostel Bishkek"
   },
 
   // ── Giorno 2 ─────────────────────────────────────────────
   {
     day: 2,
-    date: "2025-05-31",
-    title: "Bishkek → Ala-Archa → Karakol",
-    route: "Bishkek → Ala-Archa → Burana → Issyk-Kul nord → Karakol",
-    km: 420,
-    driveTime: "7-8h con soste",
+    date: "2026-05-31",
+    title: "Bishkek → Konorchek → Karakol",
+    route: "Bishkek → Ala-Archa → Konorchek → Burana → Issyk-Kul nord → Karakol",
+    km: 450,
+    driveTime: "8-9h con soste",
     budget: 35,
     activities: [
-      { time: null, description: "Mattina: Ala-Archa National Park, hike Ak-Sai Waterfall (3-4h A/R, 2,300m)" },
-      { time: null, description: "Ritiro auto da Russian Troika nel pomeriggio, ispezione completa" },
-      { time: null, description: "Burana Tower (minareto XI secolo, Via della Seta, ~200 KGS)" },
-      { time: null, description: "Opzionale: Cholpon-Ata petroglifi (Età del Bronzo)" },
-      { time: null, description: "Guida lungo sponda nord Issyk-Kul" },
-      { time: null, description: "Arrivo Karakol sera" },
-      { time: null, description: "Cena: Ashlyam-Fu (piatto freddo noodle unico di Karakol), ristoranti Dungani" }
+      {
+        time: null,
+        description: "Mattina: Ala-Archa National Park, hike Ak-Sai Waterfall (cascata in Ala-Archa)",
+        details: {
+          why: "Parco alpino a 30 km da Bishkek (1500-4895m). Lo conoscono tutti i bishkekesi del weekend. La cascata Ak-Sai è in fondo a una valle laterale.",
+          duration: "Hike Ak-Sai: 3-5h andata e ritorno (~12 km, +700m)",
+          cost: "Entrata parco: ~80 KGS auto + 50 KGS persona",
+          tip: "Trail ripido nell'ultima ora. Acqua ai ruscelli OK con filtro. In alternativa al waterfall: Adygene Glacier o solo passeggiata in fondovalle (1h)."
+        }
+      },
+      { time: null, description: "Ritiro auto da Russian Troika" },
+      {
+        time: null,
+        description: "Konorchek Canyon (red canyon, hike 1-2h)",
+        details: {
+          why: "Canyon rosso di arenaria simile al Bryce americano. Trailhead segnalato sulla A365 al km della stazione di Kok-Moinok. A pochi km c'è Mars Canyon (paesaggio marziano, formazioni più piatte).",
+          duration: "Loop base: 1.5-2h. Versione lunga 4h.",
+          cost: "Gratis",
+          tip: "Niente ombra, parti presto o nel tardo pomeriggio. Sulla strada per Karakol vale la pena fermarsi a Cholpon-Ata Petroglyph Stone Field (petroglifi Età del Bronzo, 30 min sosta) e a Chong-Kemin National Park (parco naturale per trekking)."
+        }
+      },
+      {
+        time: null,
+        description: "Burana Tower (XI sec, vista Tien Shan)",
+        details: {
+          why: "Minareto del XI secolo, ultimo pezzo di Balasagun, capitale dell'impero Karakhanide. Si sale dentro fino in cima per la vista a 360°.",
+          duration: "30-45 minuti totali",
+          cost: "Entrata ~60 KGS",
+          tip: "Sul terreno ci sono i balbal (statue di pietra di guerrieri turchi). Piccolo museo archeologico incluso. Domenica c'è gente."
+        }
+      },
+      {
+        time: null,
+        description: "Animal Market di Karakol — SOLO domenica mattina presto (5:30-9:00). Se passi di domenica, alzati all'alba",
+        details: {
+          why: "Il mercato del bestiame più autentico del Kirghizistan. Pastori arrivano da giorni per vendere pecore, capre, mucche, cavalli. Chiude alle 10.",
+          duration: "1h è più che sufficiente",
+          cost: "Gratis",
+          tip: "Solo domenica, e SOLO se ti svegli prima delle 7. Niente foto invasive — chiedi prima. Si mangia samsa fresca dai venditori."
+        }
+      },
+      { time: null, description: "Guida sponda nord Issyk-Kul fino a Karakol" }
     ],
     gps: [
       { name: "Ala-Archa NP", lat: 42.6464, lng: 74.4847 },
+      { name: "Ak-Sai Waterfall (Ala-Archa)", lat: 42.5511, lng: 74.4978 },
+      { name: "Konorchek Canyon", lat: 42.6833, lng: 75.8500 },
+      { name: "Mars Canyon", lat: 42.6700, lng: 75.8200 },
       { name: "Burana Tower", lat: 42.7472, lng: 75.2503 },
+      { name: "Animal Market Karakol", lat: 42.4736, lng: 78.3625 },
       { name: "Karakol centro", lat: 42.4907, lng: 78.3936 }
     ],
-    warnings: ["⛽ Fare benzina prima di partire da Bishkek"],
-    accommodation: "Duet Hostel o Jamilya B&B (€8-12pp)"
+    warnings: ["⛽ Fare benzina a Bishkek prima di partire", "🐎 Animal Market: SOLO domenica mattina (5:30-9:00)"],
+    accommodation: "Duet Hostel Karakol"
   },
 
   // ── Giorno 3 ─────────────────────────────────────────────
   {
     day: 3,
-    date: "2025-06-01",
-    title: "Jyrgalan Valley",
+    date: "2026-06-01",
+    title: "Karakol: Jyrgalan Valley",
     route: "Karakol → Jyrgalan → Karakol",
     km: 70,
     driveTime: "1h A/R",
     budget: 30,
     activities: [
-      { time: null, description: "Guida verso Jyrgalan Valley (35km da Karakol)" },
-      { time: null, description: "Opzione A: Waterfall Trail (5-6h, moderato)" },
-      { time: null, description: "Opzione B: Kok-Bel Pass (4-5h, panoramico)" },
-      { time: null, description: "Pranzo al sacco / chaikhana locale" },
-      { time: null, description: "Children's Day (1 giugno) — festeggiamenti locali" },
-      { time: null, description: "Spot drone: valle e montagne 🥈" },
-      { time: null, description: "Rientro a Karakol, cena" }
+      {
+        time: null,
+        description: "Guida verso Jyrgalan (35km)",
+        details: {
+          why: "Jyrgalan = villaggio minerario abbandonato trasformato in hub di trekking. Strada asfaltata fino al villaggio, poi sterrato.",
+          duration: "1h da Karakol",
+          tip: "Da Karakol prendi la strada per Tup, poi svolta a destra. Marshrutka ~80 KGS se vuoi lasciare la macchina."
+        }
+      },
+      {
+        time: null,
+        description: "Waterfall Trail o Kok-Bel Pass hike",
+        details: {
+          why: "Eki Chat Waterfall = trail breve (3h round trip, facile). Kok-Bel Pass = trail più impegnativo (5h round trip, +600m) con panorama su Jyrgalan e Issyk-Kul lontano.",
+          duration: "3-5h a seconda del trail",
+          tip: "Best time: giugno-settembre. Trail ben segnati. Pernottamento in yurta camp ~800 KGS persona se vuoi prolungare."
+        }
+      },
+      { time: null, description: "Spot drone" },
+      {
+        time: null,
+        description: "Children's Day — festeggiamenti locali",
+        details: {
+          why: "Il 1° giugno = Festa internazionale del Bambino, festeggiata in tutta l'ex-URSS. Bambini in costume, parchi pieni, gelati ovunque, bandierine. Atmosfera bellissima nei piccoli villaggi.",
+          tip: "Se sei a Jyrgalan o Karakol l'1 giugno, vai in piazza centrale alle 10:00. Foto magnifiche dei bambini. Porta caramelle se vuoi farti subito amici."
+        }
+      }
     ],
     gps: [
-      { name: "Villaggio Jyrgalan", lat: 42.8186, lng: 79.2094 },
-      { name: "Karakol centro", lat: 42.4907, lng: 78.3936 }
+      { name: "Villaggio Jyrgalan", lat: 42.8186, lng: 79.2094 }
     ],
     warnings: ["🎉 1 giugno = Children's Day in Kirghizistan"],
-    accommodation: "Duet Hostel o Jamilya B&B Karakol (€8-12pp)"
+    accommodation: "Duet Hostel Karakol"
   },
 
   // ── Giorno 4 ─────────────────────────────────────────────
   {
     day: 4,
-    date: "2025-06-02",
-    title: "Altyn-Arashan Hot Springs",
+    date: "2026-06-02",
+    title: "Karakol: Altyn-Arashan Hot Springs",
     route: "Karakol → Altyn-Arashan → Karakol",
-    km: 30,
+    km: 0,
     driveTime: "Hike 3-4h one way",
     budget: 30,
     activities: [
-      { time: null, description: "Hike verso Altyn-Arashan (3-4h, +800m dislivello)" },
-      { time: null, description: "Sorgenti termali naturali (~200 KGS ingresso)" },
-      { time: null, description: "Opzionale: proseguire verso Ala-Kul Lake (giornata intera, impegnativo)" },
-      { time: null, description: "Pranzo al sacco" },
-      { time: null, description: "Rientro a Karakol" },
-      { time: null, description: "Cena a Karakol" }
+      {
+        time: null,
+        description: "Mattina Karakol: Dungan Mosque (legno, no chiodi, 1907) + Orthodox Holy Trinity Church",
+        details: {
+          why: "Dungan Mosque: costruita nel 1907 dai Dungan (musulmani cinesi), tutta in legno, NESSUN chiodo, dipinta in stile pagoda buddista cinese. Sopravvissuta al terremoto del 1911 e all'epoca sovietica. Holy Trinity: chiesa russa-ortodossa anch'essa in legno, ricostruita 1895 dopo il terremoto.",
+          duration: "30 min ciascuna, sono vicine",
+          cost: "Entrata libera, donazione benvenuta",
+          tip: "Donne: foulard sulla testa nella moschea (te lo prestano gratis all'entrata). Non-musulmani: meglio guardare dall'esterno. Niente foto durante la preghiera."
+        }
+      },
+      {
+        time: null,
+        description: "Trasferimento al trailhead — opzione UAZ vintage sovietico (più rapido, 1h vs 4h a piedi)",
+        details: {
+          why: "L'UAZ-452 è il furgone militare sovietico anni '60. Il trasferimento da Karakol fino al village di Altyn-Arashan dura 1h, su strada così sconnessa che la Subaru non passa.",
+          cost: "30-40 USD a/r, condivisibile fino a 6 persone",
+          tip: "Si organizzano da Duet Hostel o CBT Karakol. Esperienza in sé memorabile: ti scuote come un cocktail."
+        }
+      },
+      {
+        time: null,
+        description: "Hike verso Altyn-Arashan (3-4h, +800m) — panorama infinito sulla valle",
+        details: {
+          why: "Valle alpina dietro Karakol, considerata una delle più belle del paese. Trailhead a Ak-Suu (Teploklyuchenka), 12 km da Karakol. Hike alternativi nella zona: Red Hills (colline rosse 'islandesi') e Kol-Ukok (lago alpino con horse riding spot).",
+          duration: "Hike 3-4h andata, +800m dislivello, 14 km a/r",
+          tip: "Dalla cima della valle vedi il Palatka Peak (4260m). Acqua nei ruscelli OK con filtro. Trail segnato a punti rossi."
+        }
+      },
+      {
+        time: null,
+        description: "Sorgenti termali naturali (≈45°C) a 2600m — Altyn-Arashan = 'sorgenti d'oro'",
+        details: {
+          why: "5 vasche con acqua termale fortemente sulfurea. Quella più nota è all'interno della guesthouse Arashan ('White House'), 100 KGS.",
+          duration: "Quanto vuoi. Max 20-30 min in vasca per non disidratarti.",
+          cost: "100 KGS per le vasche dentro le guesthouse",
+          tip: "Costume + ciabatte. Prima di entrare, doccia. L'acqua puzza di zolfo: i vestiti puzzano per giorni."
+        }
+      },
+      {
+        time: null,
+        description: "WILD HOT SPRINGS poco oltre il villaggio: pozze libere lungo il fiume, gratis",
+        details: {
+          why: "200m a monte del villaggio, sul lato del fiume, ci sono pozze naturali calde formate dall'acqua termale che esce dalla roccia. Gratis, sempre aperte, viste sul Palatka Peak.",
+          duration: "Quanto vuoi",
+          cost: "Gratis",
+          tip: "Fai mattina presto o tardo pomeriggio per evitare la folla del weekend. Non lasciare zaini incustoditi."
+        }
+      },
+      {
+        time: null,
+        description: "Cena al Dastorkon Restaurant (Karakol) — uno dei migliori ristoranti tradizionali della città",
+        details: {
+          why: "Cucina kirghisa autentica in un setting yurta-style. Specialità: beshbarmak, lagman fatto a mano, plov.",
+          cost: "Pasto completo: 800-1500 KGS a persona",
+          tip: "Provare il kumys (latte di cavalla fermentato) come digestivo se sei coraggioso. Prenotare di sabato."
+        }
+      },
+      { time: null, description: "Opzionale: proseguire verso Ala-Kul Lake (richiede 2 giorni)" }
     ],
     gps: [
+      { name: "Dungan Mosque", lat: 42.4915, lng: 78.3833 },
+      { name: "Holy Trinity Church", lat: 42.4919, lng: 78.3922 },
       { name: "Trailhead Altyn-Arashan", lat: 42.6592, lng: 78.5261 },
-      { name: "Karakol centro", lat: 42.4907, lng: 78.3936 }
+      { name: "Hot Springs Altyn-Arashan", lat: 42.7500, lng: 78.5700 },
+      { name: "Wild Hot Springs (oltre villaggio)", lat: 42.7600, lng: 78.5750 },
+      { name: "Ala-Kul Lake (opzionale)", lat: 42.4983, lng: 78.5333 },
+      { name: "Dastorkon Restaurant", lat: 42.4889, lng: 78.3953 }
     ],
-    warnings: ["🥾 Sentiero ripido, +800m dislivello", "💧 Portare acqua sufficiente"],
-    accommodation: "Duet Hostel o Jamilya B&B Karakol (€8-12pp)"
+    warnings: [
+      "🥾 Sentiero ripido, portare acqua",
+      "♨️ Hot springs: portare costume e ciabatte",
+      "🚗 UAZ tour: organizzabile da Karakol (~30 USD a/r)"
+    ],
+    accommodation: "Duet Hostel Karakol"
   },
 
   // ── Giorno 5 ─────────────────────────────────────────────
   {
     day: 5,
-    date: "2025-06-03",
-    title: "Sponda Sud Issyk-Kul",
-    route: "Karakol → Barskoon → Fairy Tale Canyon → Bokonbayevo",
-    km: 250,
-    driveTime: "4-5h con soste",
-    budget: 40,
+    date: "2026-06-03",
+    title: "Karakol → Sary-Jaz Valley",
+    route: "Karakol → Sary-Jaz Valley (zona remota)",
+    km: 150,
+    driveTime: "4-5h",
+    budget: 25,
     activities: [
-      { time: null, description: "Partenza da Karakol, sponda sud Issyk-Kul" },
-      { time: null, description: "Barskoon Waterfall (cascata + valle, spot drone 🥉)" },
-      { time: null, description: "Fairy Tale Canyon / Skazka (formazioni rocciose rosse, spot drone 🥈)" },
-      { time: null, description: "Bokonbayevo: dimostrazione Eagle Hunter (caccia con aquile)" },
-      { time: null, description: "Cena locale" }
+      {
+        time: null,
+        description: "Guida est verso Sary-Jaz Valley (remota, spettacolare)",
+        details: {
+          why: "Una delle valli più remote del Kirghizistan, vicino ai confini Cina e Kazakistan. Ghiacciai Inylchek (i più lunghi dell'Asia centrale, 60km), vista verso il picco Khan Tengri (7,010m). Pochi turisti, paesaggi alieni.",
+          duration: "4-5h guida + esplorazione",
+          tip: "Strada solo per 4x4 vero, alcuni guadi. Subaru può con cautela. Niente segnale, niente benzina, niente abitazioni per 100km — autonomia totale necessaria. Inylchek base camp è il punto più estremo accessibile."
+        }
+      },
+      {
+        time: null,
+        description: "PERMESSO ZONA DI CONFINE OBBLIGATORIO (zona militare)",
+        details: {
+          why: "Tutta la valle Sary-Jaz è zona militare di confine. Senza permesso ti rimandano indietro al checkpoint.",
+          cost: "20-30 USD persona via CBT Karakol o agenzie tour",
+          tip: "Organizza 7+ giorni prima. Serve scansione passaporto. CBT Karakol +996 39 22 50000."
+        }
+      },
+      {
+        time: null,
+        description: "Campeggio sotto le stelle",
+        details: {
+          why: "Zero inquinamento luminoso, altitudine 2,500-3,000m, atmosfera secca = stelle pazzesche. Possibile vedere la Via Lattea, ISS, satelliti.",
+          tip: "Venti glaciali fortissimi di notte. Tenda con paletti rinforzati, sacco a pelo -10°C. Acqua dai torrenti glaciali (filtra o tratta)."
+        }
+      }
     ],
     gps: [
-      { name: "Barskoon Waterfall", lat: 42.1500, lng: 77.6000 },
-      { name: "Fairy Tale Canyon (Skazka)", lat: 42.3847, lng: 77.2575 },
-      { name: "CBT Bokonbayevo", lat: 42.1208, lng: 76.9900 }
+      { name: "Sary-Jaz Valley", lat: 42.5000, lng: 79.5000 },
+      { name: "Inylchek area", lat: 42.2500, lng: 79.8000 },
+      { name: "Kara-Tash", lat: 42.1500, lng: 78.8000 }
     ],
-    warnings: ["⛽ Fare benzina a Karakol prima di partire"],
-    accommodation: "Guesthouse Bokonbayevo (€10-15pp)"
+    warnings: [
+      "📋 PERMESSO ZONA DI CONFINE OBBLIGATORIO",
+      "⛽ Nessun carburante disponibile",
+      "📵 Nessun segnale telefonico",
+      "🚗 4x4 essenziale"
+    ],
+    accommodation: "Wild camping"
   },
 
   // ── Giorno 6 ─────────────────────────────────────────────
   {
     day: 6,
-    date: "2025-06-04",
-    title: "Son-Kul Lake",
-    route: "Bokonbayevo → Kochkor → Son-Kul Pass → Son-Kul",
-    km: 200,
-    driveTime: "5-6h",
-    budget: 40,
+    date: "2026-06-04",
+    title: "Sary-Jaz → Sponda Sud Issyk-Kul",
+    route: "Sary-Jaz → sponda sud Issyk-Kul",
+    km: 300,
+    driveTime: "6-7h",
+    budget: 30,
     activities: [
-      { time: null, description: "Guida verso Kochkor" },
-      { time: null, description: "Kochkor: laboratorio feltro artigianale (shyrdak)" },
-      { time: null, description: "⛽ FARE BENZINA A KOCHKOR (ultima stazione prima di Son-Kul)" },
-      { time: null, description: "Son-Kul Pass (3,500m) — prima volta sopra 3,000m" },
-      { time: null, description: "Arrivo Son-Kul Lake (3,016m)" },
-      { time: null, description: "Sistemazione in yurta camp" },
-      { time: null, description: "Cena tradizionale in yurta" }
+      {
+        time: null,
+        description: "Rientro da Sary-Jaz",
+        details: {
+          why: "5-6h di guida nel ritorno. Stessa strada dell'andata, niente segnale fino a Karakol.",
+          tip: "Parti presto, prima del vento del pomeriggio. Pieno carburante a Karakol prima di scendere a sud."
+        }
+      },
+      {
+        time: null,
+        description: "Guida sponda sud Issyk-Kul",
+        details: {
+          why: "La sponda sud è meno turistica della nord, più selvaggia. Strada A363 generalmente buona, attraversa villaggi rurali.",
+          tip: "Fare benzina a Karakol o Bokonbayevo. Tra l'una e l'altra ci sono 200km senza distributori affidabili."
+        }
+      },
+      {
+        time: null,
+        description: "Ak-Say Canyon al golden hour (sul lago!)",
+        details: {
+          why: "Canyon rosso che si affaccia direttamente sul lago Issyk-Kul. Hike breve (10-15 min) per arrivare al punto panoramico.",
+          duration: "1-2h sul posto",
+          tip: "Best time: golden hour (1h prima del tramonto). Niente ombra, porta cappello. Drone consentito."
+        }
+      },
+      {
+        time: null,
+        description: "Seven Bulls Rock",
+        details: {
+          why: "Aka Jety Oguz: 7 formazioni di arenaria rossa che ricordano una mandria di tori. Vicino alla città di Jeti-Oguz, 28km da Karakol.",
+          cost: "Ingresso: 50 KGS",
+          tip: "Combina con la 'Roccia del Cuore Spezzato' a 1km. Best time tramonto (rocce diventano arancio fluo)."
+        }
+      }
     ],
     gps: [
-      { name: "CBT Kochkor", lat: 42.0133, lng: 75.7592 },
-      { name: "Son-Kul (accesso nord)", lat: 41.8333, lng: 75.1500 }
+      { name: "Ak-Say Canyon", lat: 42.3500, lng: 76.8000 },
+      { name: "Seven Bulls Rock", lat: 42.2800, lng: 77.5500 }
     ],
-    warnings: [
-      "⛽ ULTIMO RIFORNIMENTO A KOCHKOR!",
-      "🏔️ Prima notte sopra 3,000m — attenzione mal di montagna",
-      "🌡️ Temperature notturne possono scendere sotto 0°C"
-    ],
-    accommodation: "Yurta camp Son-Kul (€15-20pp con cena e colazione)"
+    warnings: [],
+    accommodation: "Wild camp sulla riva di Issyk-Kul"
   },
 
   // ── Giorno 7 ─────────────────────────────────────────────
   {
     day: 7,
-    date: "2025-06-05",
-    title: "Son-Kul — Giornata Completa",
-    route: null,
-    km: 0,
-    driveTime: null,
+    date: "2026-06-05",
+    title: "Sponda Sud Issyk-Kul: Jety Oguz, Barskoon, Skazka",
+    route: "Jety Oguz → Barskoon → Arabel Plateau → Skazka",
+    km: 180,
+    driveTime: "4-5h",
     budget: 35,
     activities: [
-      { time: null, description: "Colazione in yurta" },
-      { time: null, description: "Passeggiata a cavallo con nomadi (~1,000-1,500 KGS/h)" },
-      { time: null, description: "Vita nomade: osservare mungitura, preparazione kumys" },
-      { time: null, description: "Spot drone: yurte, mandrie, lago 🥇" },
-      { time: null, description: "Pranzo in yurta" },
-      { time: null, description: "Esplorazione rive del lago" },
-      { time: null, description: "Tramonto sul lago" },
-      { time: null, description: "Stargazing (zero inquinamento luminoso)" }
+      {
+        time: null,
+        description: "Jety Oguz Rocks (Sette Tori) — formazioni rosse iconiche + Cuore Spezzato",
+        details: {
+          why: "7 formazioni di arenaria rossa che ricordano una mandria di tori (jety oguz = 7 tori). Accanto la roccia 'Broken Heart' con leggenda: due fratelli che amano la stessa donna la uccisero, e il loro sangue diede il colore rosso alle rocce.",
+          duration: "1-2 ore (foto + breve passeggiata)",
+          cost: "Gratis",
+          tip: "Migliore luce: tardo pomeriggio (rocce più rosse). Drone consentito. Bagno pubblico a pagamento all'ingresso."
+        }
+      },
+      {
+        time: null,
+        description: "Barskoon Gorge: cascate Barskoon (la più alta è Manjyly-Ata ≈ 30m), monumento Gagarin",
+        details: {
+          why: "Catena di cascate dentro la valle Barskoon. La principale è 'Manjyly-Ata' (~30m). C'è un busto di Gagarin sulla strada principale: qui veniva in vacanza.",
+          duration: "Hike 2-3h totale fino alla cascata principale",
+          cost: "Gratis",
+          tip: "Trailhead di fianco al busto di Gagarin (non puoi sbagliare). Pendenza dolce, foresta. In estate l'acqua è abbondante."
+        }
+      },
+      {
+        time: null,
+        description: "Barskoon Pass → Arabel Plateau (camping spot, 3,800m)",
+        details: {
+          why: "Salita tornanti del Barskoon Pass (3,800m) fino al Plateau Arabel: vasta zona alpina con laghi e cavalli liberi. Una delle viste più ampie di tutto il Kirghizistan.",
+          tip: "Strada sterrata oltre il pass — Subaru OK ma piano. Notte freddissima sotto zero anche a giugno. Acqua: prendi prima."
+        }
+      },
+      {
+        time: null,
+        description: "Fairy Tale Canyon / Skazka — formazioni colorate, tramonto magico",
+        details: {
+          why: "'Skazka' = fiaba in russo. Canyon di arenaria rossa, gialla, viola, eroso da vento e pioggia in formazioni che sembrano draghi, castelli, muraglia. Sul lago Issyk-Kul, lato sud.",
+          duration: "1-2 ore",
+          cost: "Entrata: 50 KGS",
+          tip: "ANDARE AL TRAMONTO — la luce trasforma il canyon. La 'Great Wall' è la formazione più alta. Niente acqua sul posto, porta scorta."
+        }
+      }
     ],
     gps: [
-      { name: "Son-Kul Lake", lat: 41.8333, lng: 75.1500 }
+      { name: "Jety Oguz Rocks", lat: 42.3478, lng: 78.2333 },
+      { name: "Barskoon Waterfall", lat: 42.1500, lng: 77.6000 },
+      { name: "Monumento Gagarin", lat: 42.1633, lng: 77.6128 },
+      { name: "Arabel Plateau", lat: 41.9500, lng: 77.5000 },
+      { name: "Fairy Tale Canyon (Skazka)", lat: 42.3847, lng: 77.2575 },
+      { name: "Kol-Tor Lake", lat: 42.6000, lng: 74.8000 }
     ],
-    warnings: [
-      "🏔️ Seconda notte a 3,000m — monitorare sintomi",
-      "☀️ Protezione solare forte (alta quota = UV intensi)"
-    ],
-    accommodation: "Yurta camp Son-Kul (€15-20pp con cena e colazione)"
+    warnings: ["🏔️ Arabel Plateau a 3,800m — freddo notte"],
+    accommodation: "Camp Arabel Plateau o guesthouse Bokonbayevo"
   },
 
   // ── Giorno 8 ─────────────────────────────────────────────
   {
     day: 8,
-    date: "2025-06-06",
-    title: "Son-Kul → Naryn → Tash Rabat",
-    route: "Son-Kul → Naryn → At-Bashy → Tash Rabat",
-    km: 250,
-    driveTime: "5-6h",
-    budget: 35,
+    date: "2026-06-06",
+    title: "Bokonbayevo: Eagle Hunting + Felt + Folklore",
+    route: null,
+    km: 50,
+    driveTime: null,
+    budget: 50,
     activities: [
-      { time: null, description: "Colazione e partenza da Son-Kul" },
-      { time: null, description: "Discesa verso Naryn" },
-      { time: null, description: "Naryn: ATM (ULTIMO ATM fino a Osh!) + rifornimento benzina" },
-      { time: null, description: "Pranzo a Naryn" },
-      { time: null, description: "Guida verso At-Bashy e Tash Rabat" },
-      { time: null, description: "Tash Rabat: caravanserraglio XV secolo (Via della Seta, 3,200m)" },
-      { time: null, description: "Spot drone: Tash Rabat 🥉" },
-      { time: null, description: "Notte in yurta vicino Tash Rabat" }
+      {
+        time: null,
+        description: "Mattina: Eagle Hunting demo (CBT Bokonbayevo, prenotare in anticipo)",
+        details: {
+          why: "Tradizione millenaria di caccia con aquila reale (berkutchi). Bokonbayevo è il centro nazionale di questa pratica. Vedi l'aquila lanciata, vola, torna sul guanto, eventualmente caccia simulata.",
+          duration: "1-2h dimostrazione + spiegazione",
+          cost: "1500-2500 KGS persona (gruppo) — 5000+ KGS privato",
+          tip: "Stagione caccia vera: ottobre-marzo. Maggio-settembre = solo dimostrazioni, ma comunque vere. Prenota: CBT Bokonbayevo +996 779 988 678 o Salbuurun Federation. Le aquile vengono rilasciate dopo 10-15 anni."
+        }
+      },
+      {
+        time: null,
+        description: "Pomeriggio: Felt Making master class (lavorazione shyrdak tradizionale, 2h)",
+        details: {
+          why: "Lo shyrdak è il tappeto in feltro tradizionale kirghiso, patrimonio UNESCO Intangible Cultural Heritage dal 2012. Workshop pratico: bagnare lana, arrotolare, calpestare, asciugare. Risultato: piccolo pezzo 15x15cm da portare a casa.",
+          duration: "2-3h",
+          cost: "1000-1500 KGS persona",
+          tip: "Cooperative femminili: Aigine o Aigul Trade. Spesso include tè + lepyoshka (pane locale). Combina con Eagle Hunting nello stesso giorno."
+        }
+      },
+      {
+        time: null,
+        description: "Sera: Folklore Show (musica, danze, komuz) — organizzato da CBT",
+        details: {
+          why: "Spettacolo serale con strumenti tradizionali: komuz (3 corde), kyl-kyak (violino verticale), temir komuz (scacciapensieri). Spesso include recitazione dell'epica di Manas.",
+          duration: "60-90 min",
+          cost: "800-1200 KGS persona",
+          tip: "Solitamente 19:30-20:30. Cena spesso inclusa: beshbarmak o plov. Prenota CBT Bokonbayevo qualche giorno prima."
+        }
+      },
+      { time: null, description: "Cena yurta locale" }
     ],
     gps: [
-      { name: "Naryn centro", lat: 41.4287, lng: 76.0014 },
-      { name: "Tash Rabat", lat: 40.8453, lng: 75.2847 }
+      { name: "CBT Bokonbayevo", lat: 42.1208, lng: 76.9900 },
+      { name: "Felt Workshop Bokonbayevo", lat: 42.1280, lng: 76.9870 }
     ],
-    warnings: [
-      "🏧 ULTIMO ATM A NARYN! Prelevare abbastanza contanti per 5+ giorni",
-      "⛽ Fare benzina a Naryn"
-    ],
-    accommodation: "Yurta camp Tash Rabat (€10-15pp)"
+    warnings: ["📞 Eagle Hunting + Felt + Folklore: prenotare giorni prima via CBT"],
+    accommodation: "Guesthouse Bokonbayevo"
   },
 
   // ── Giorno 9 ─────────────────────────────────────────────
   {
     day: 9,
-    date: "2025-06-07",
+    date: "2026-06-07",
+    title: "Bokonbayevo → Song-Kul",
+    route: "Bokonbayevo → Kochkor → Song-Kul Pass → Song-Kul",
+    km: 200,
+    driveTime: "5-6h",
+    budget: 40,
+    activities: [
+      {
+        time: null,
+        description: "Guida via Kochkor (ULTIMO CARBURANTE prima di Song-Kul!)",
+        details: {
+          why: "Kochkor è lo snodo tra Bishkek, Karakol e Naryn. Stazione Gazprom all'ingresso. Da qui parte la salita verso Song-Kul, 3h di sterrato senza distributori.",
+          tip: "Pieno + tanica 10L per sicurezza. ATM in centro: Bai-Tushum, Optima. Fai contanti per yurta camp (no carte sopra)."
+        }
+      },
+      {
+        time: null,
+        description: "Kochkor: laboratorio feltro artigianale (shyrdak)",
+        details: {
+          why: "Cooperative storiche del feltro: Altyn Kol e Wenan, due delle migliori del paese. Possono mostrarti il processo o vendere shyrdak originali (1500-15000 KGS a seconda della dimensione).",
+          duration: "30-60 min",
+          tip: "Se hai già fatto Felt Master Class a Bokonbayevo (Day 8), salta. Altrimenti vale la pena."
+        }
+      },
+      {
+        time: null,
+        description: "Song-Kul Pass (3,500m)",
+        details: {
+          why: "Salita tornanti del passo Song-Kul, ultimo prima di scendere al lago. Vista panoramica sul lago a 3,016m.",
+          tip: "Se hai mal di montagna, sintomi possono iniziare qui. Bere molta acqua, niente alcol, riposare appena arrivi al campo."
+        }
+      },
+      {
+        time: null,
+        description: "Arrivo Song-Kul Lake (3,016m)",
+        details: {
+          why: "Lago alpino circondato da pascoli (jailoo). Cuore della cultura nomade kirghiza. D'estate i pastori salgono qui con le mandrie e vivono in yurte.",
+          duration: "2 giorni minimo",
+          tip: "Acqua del lago: 4-8°C anche d'estate, NON ti tuffi. Niente segnale, niente elettricità (pannelli solari deboli), niente bagni veri."
+        }
+      },
+      {
+        time: null,
+        description: "Yurta camp, cena tradizionale",
+        details: {
+          why: "Cena solitamente: zuppa shorpo, beshbarmak (pasta + agnello bollito), kymyz (latte di cavalla fermentato — provalo, è acido), tè con marmellata.",
+          cost: "Yurta camp: 700-1500 KGS persona con cena+colazione",
+          tip: "Notte freddissima anche in giugno (-5°C). Sacco a pelo + maglione. Stelle: Via Lattea visibile a occhio nudo. Tripode se hai macchina fotografica."
+        }
+      }
+    ],
+    gps: [
+      { name: "CBT Kochkor", lat: 42.0133, lng: 75.7592 },
+      { name: "Song-Kul", lat: 41.8333, lng: 75.1500 }
+    ],
+    warnings: [
+      "⛽ ULTIMO RIFORNIMENTO A KOCHKOR!",
+      "🏔️ Prima notte sopra 3,000m — attenzione mal di montagna",
+      "🌡️ Temperature notturne sotto 0°C"
+    ],
+    accommodation: "Yurta camp Song-Kul"
+  },
+
+  // ── Giorno 10 ────────────────────────────────────────────
+  {
+    day: 10,
+    date: "2026-06-08",
+    title: "Song-Kul — Giornata Completa",
+    route: null,
+    km: 0,
+    driveTime: null,
+    budget: 35,
+    activities: [
+      {
+        time: null,
+        description: "Passeggiata a cavallo con nomadi",
+        details: {
+          why: "Esperienza più autentica di Song-Kul: i pastori ti portano in giro per il jailoo (pascolo alpino) tra cavalli liberi e mandrie. Si organizza direttamente al campo.",
+          duration: "1-3h",
+          cost: "300-500 KGS per ora",
+          tip: "Se non hai mai cavalcato, dillo subito. Cavalli kirghizi sono piccoli ma resistenti, abituati al freddo. Casco non incluso, vai piano."
+        }
+      },
+      {
+        time: null,
+        description: "Osservare preparazione kumys",
+        details: {
+          why: "Kumys = latte di cavalla fermentato, bevanda nazionale. Si prepara in un sacchetto di pelle (chykcha) appeso che viene scosso più volte al giorno per giorni. Ha una leggera componente alcolica naturale (~2%).",
+          tip: "Provalo. Sapore: acido, frizzante, salato. Strano la prima volta, addictivo dopo. Effetto lassativo se non sei abituato — non esagerare."
+        }
+      },
+      {
+        time: null,
+        description: "Drone: yurte, mandrie, lago",
+        details: {
+          why: "Una delle località più drone-friendly del Kirghizistan: lago turchese, yurte bianche, mandrie di cavalli, montagne sullo sfondo. Niente regolamenti specifici.",
+          tip: "Vento si alza dopo le 11:00. Vola al mattino o al tramonto. Batterie dura meno a 3,000m e -5°C — porta extra e tienile dentro la giacca."
+        }
+      },
+      {
+        time: null,
+        description: "Tramonto, stargazing (zero inquinamento luminoso)",
+        details: {
+          why: "Song-Kul ha uno dei cieli più scuri dell'Asia centrale. Inquinamento luminoso zero, altitudine 3,000m, atmosfera secca. Via Lattea, ISS, satelliti, stelle cadenti.",
+          tip: "Aspetta che sia BUIO completo (~22:30 a giugno). Lampada frontale con luce rossa per non rovinare adattamento occhi. Macchina fotografica: ISO 3200, 20s exposure, f/2.8."
+        }
+      }
+    ],
+    gps: [
+      { name: "Song-Kul Lake", lat: 41.8333, lng: 75.1500 }
+    ],
+    warnings: [
+      "🏔️ Mal di montagna — monitorare sintomi",
+      "☀️ UV forte ad alta quota"
+    ],
+    accommodation: "Yurta camp Song-Kul"
+  },
+
+  // ── Giorno 11 ────────────────────────────────────────────
+  {
+    day: 11,
+    date: "2026-06-09",
+    title: "Song-Kul → Naryn → Tash Rabat",
+    route: "Song-Kul → Naryn → Tash Rabat",
+    km: 250,
+    driveTime: "5-6h",
+    budget: 35,
+    activities: [
+      {
+        time: null,
+        description: "Guida verso Naryn (ULTIMO ATM!)",
+        details: {
+          why: "Naryn è il capoluogo della provincia, ultima 'città' prima del nulla. Da qui non c'è più ATM funzionante per 4+ giorni (Tash Rabat, Kel-Suu, Kazarman = solo contanti).",
+          tip: "ATM: Optima, KICB, Bai-Tushum (centro). Limite 20,000 KGS per prelievo, fai 2-3 prelievi per avere abbastanza. Cambia anche EUR/USD se ne hai."
+        }
+      },
+      {
+        time: null,
+        description: "Fare benzina a Naryn",
+        details: {
+          why: "Tre stazioni in centro, AI-92 e AI-95 disponibili. Da qui benzina solo a Kazarman (300+ km).",
+          tip: "Pieno + tanica 10L. Se vai a Kel-Suu, considera tanica 20L."
+        }
+      },
+      {
+        time: null,
+        description: "Tash Rabat: caravanserraglio XV secolo, Via della Seta, 3,200m",
+        details: {
+          why: "Caravanserraglio in pietra del XV secolo, lungo la Via della Seta a 3,200m. Forse era un monastero cristiano-nestoriano o buddista prima. Ti puoi entrare dentro: 31 stanze, cupola centrale, tutto in pietra grezza.",
+          duration: "1-2h sul posto. Hike opzionale 4-5h fino al passo Tash Rabat (3,968m) per vista sulla Cina.",
+          cost: "Ingresso 100 KGS. Yurta camp ~800-1200 KGS persona con cena (l'unico alloggio).",
+          tip: "Custode raramente presente — è all'aperto, sempre accessibile. Best time tramonto (luce dorata sulla pietra). Per Kel-Suu serve permesso militare e UAZ separato."
+        }
+      }
+    ],
+    gps: [
+      { name: "Naryn centro", lat: 41.4287, lng: 76.0014 },
+      { name: "Tash Rabat", lat: 40.8453, lng: 75.2847 },
+      { name: "Kok-Kiya Canyon", lat: 41.0000, lng: 75.5000 }
+    ],
+    warnings: [
+      "🏧 ULTIMO ATM A NARYN! Prelevare abbastanza contanti per 4+ giorni",
+      "⛽ Fare benzina a Naryn"
+    ],
+    accommodation: "Yurta camp Tash Rabat"
+  },
+
+  // ── Giorno 12 ────────────────────────────────────────────
+  {
+    day: 12,
+    date: "2026-06-10",
     title: "Spedizione Kel-Suu",
     route: "Tash Rabat → At-Bashy → Kel-Suu → At-Bashy",
     km: 160,
     driveTime: "4-5h A/R (UAZ)",
     budget: 45,
     activities: [
-      { time: null, description: "Noleggio UAZ ad At-Bashy (€60-80, Subaru NON può andare — guadi profondi)" },
-      { time: null, description: "Guida verso Kel-Suu con autista locale" },
-      { time: null, description: "Kel-Suu Lake: lago turchese in canyon spettacolare (3,500m)" },
-      { time: null, description: "Spot drone: Kel-Suu 🥇 (canyon + turchese)" },
-      { time: null, description: "Pranzo al sacco" },
-      { time: null, description: "Rientro ad At-Bashy" },
-      { time: null, description: "Cena ad At-Bashy" }
+      {
+        time: null,
+        description: "Noleggio UAZ ad At-Bashy (Subaru NON può andare — guadi profondi)",
+        details: {
+          why: "Per arrivare a Kel-Suu serve attraversare guadi profondi 80cm — la Subaru affonderebbe. UAZ russa è l'unica opzione, lascia la macchina ad At-Bashy.",
+          duration: "4-5h andata, 4-5h ritorno",
+          cost: "10000-15000 KGS per gruppo (4-6 persone)",
+          tip: "Organizza il giorno prima via CBT At-Bashy o guesthouse. Parti all'alba per avere tempo al lago. Porta tutto: niente shop, niente cibo, niente WC sulla strada."
+        }
+      },
+      {
+        time: null,
+        description: "PERMESSO ZONA DI CONFINE OBBLIGATORIO",
+        details: {
+          why: "Kel-Suu è in zona militare vicino al confine cinese. Senza permesso ti rimandano indietro al checkpoint.",
+          tip: "Organizza 7+ giorni prima via CBT Naryn (+996 35 22 26076). Costo ~20-30 USD persona. Serve scansione passaporto."
+        }
+      },
+      {
+        time: null,
+        description: "Kel-Suu Lake: lago turchese in canyon gigante, 3,500m",
+        details: {
+          why: "Lago alpino lungo 6km incassato in un canyon di 200m. Acqua turchese irreale per il fango glaciale in sospensione. Una delle località più remote e meno fotografate del Kirghizistan.",
+          duration: "2-3h sul posto",
+          tip: "Best time: metà luglio-fine agosto. Prima è ghiacciato. Foto: meglio mattina presto (vento si alza alle 11:00 e increspa l'acqua). Hike intorno al lago: 2-3h."
+        }
+      },
+      {
+        time: null,
+        description: "Spot drone",
+        details: {
+          why: "Canyon perfetto per il drone: pareti verticali, lago turchese, niente vento al mattino. Niente altri turisti = niente disturbo.",
+          tip: "Niente regolamenti specifici a Kel-Suu, ma sei in zona militare — mantieni distanza dal confine cinese (sud del lago). Vola basso al mattino, alto al pomeriggio."
+        }
+      }
     ],
     gps: [
       { name: "At-Bashy", lat: 41.1714, lng: 75.7986 },
       { name: "Kel-Suu", lat: 40.5811, lng: 75.0742 }
     ],
     warnings: [
-      "📋 PERMESSO ZONA DI CONFINE OBBLIGATORIO (organizzare in anticipo)",
-      "🚗 Subaru NON può raggiungere Kel-Suu — guadi profondi, serve UAZ",
-      "🏔️ Altitudine 3,500m — attenzione mal di montagna"
+      "📋 PERMESSO ZONA DI CONFINE OBBLIGATORIO — organizzare in anticipo",
+      "🚗 Subaru NON può raggiungere Kel-Suu — serve UAZ"
     ],
-    accommodation: "Guesthouse At-Bashy (€8-10pp)"
-  },
-
-  // ── Giorno 10 ────────────────────────────────────────────
-  {
-    day: 10,
-    date: "2025-06-08",
-    title: "At-Bashy → Kazarman",
-    route: "At-Bashy → Kazarman (strada più selvaggia del Kirghizistan)",
-    km: 310,
-    driveTime: "8-10h GUIDA INTERA GIORNATA",
-    budget: 30,
-    activities: [
-      { time: null, description: "Partenza presto — giornata di guida INTERA" },
-      { time: null, description: "Strada più selvaggia del Kirghizistan" },
-      { time: null, description: "Passi sopra 3,300m" },
-      { time: null, description: "NESSUNA stazione di servizio sul percorso" },
-      { time: null, description: "NESSUN segnale telefonico per gran parte del tragitto" },
-      { time: null, description: "Paesaggi lunari e valli remote" },
-      { time: null, description: "Arrivo Kazarman sera" }
-    ],
-    gps: [
-      { name: "At-Bashy", lat: 41.1714, lng: 75.7986 },
-      { name: "Kazarman", lat: 41.4000, lng: 74.0333 }
-    ],
-    warnings: [
-      "⛽ NESSUNA STAZIONE DI SERVIZIO! Partire con serbatoio pieno + tanica",
-      "📵 NESSUN SEGNALE TELEFONICO per gran parte del percorso",
-      "🏔️ Passi sopra 3,300m",
-      "⚠️ Strada sterrata, condizioni variabili — guidare con cautela",
-      "🕐 Partire all'alba, prevedere 8-10 ore"
-    ],
-    accommodation: "Guesthouse Kazarman (€8-10pp)"
-  },
-
-  // ── Giorno 11 ────────────────────────────────────────────
-  {
-    day: 11,
-    date: "2025-06-09",
-    title: "Kazarman → Arslanbob",
-    route: "Kazarman → Jalal-Abad → Arslanbob",
-    km: 200,
-    driveTime: "4-5h",
-    budget: 25,
-    activities: [
-      { time: null, description: "Partenza da Kazarman" },
-      { time: null, description: "Guida verso sud attraverso valli" },
-      { time: null, description: "Arrivo Arslanbob — villaggio uzbeko nella più grande foresta di noci del mondo" },
-      { time: null, description: "Sistemazione in homestay" },
-      { time: null, description: "Passeggiata nel villaggio" },
-      { time: null, description: "Cena uzbeka tradizionale" }
-    ],
-    gps: [
-      { name: "Kazarman", lat: 41.4000, lng: 74.0333 },
-      { name: "CBT Arslanbob", lat: 41.3311, lng: 72.9389 }
-    ],
-    warnings: ["⛽ Fare benzina appena possibile dopo Kazarman"],
-    accommodation: "Homestay Arslanbob (€8-12pp)"
-  },
-
-  // ── Giorno 12 ────────────────────────────────────────────
-  {
-    day: 12,
-    date: "2025-06-10",
-    title: "Arslanbob — Esplorazione",
-    route: null,
-    km: 0,
-    driveTime: null,
-    budget: 30,
-    activities: [
-      { time: null, description: "Big Waterfall (cascata 80m, hike 1-2h)" },
-      { time: null, description: "Small Waterfall (più accessibile)" },
-      { time: null, description: "Opzionale: passeggiata a cavallo nella foresta di noci" },
-      { time: null, description: "Opzionale: Holy Lake (lago sacro, hike più lungo)" },
-      { time: null, description: "Pranzo in villaggio" },
-      { time: null, description: "Esplorazione foresta di noci (la più grande al mondo)" },
-      { time: null, description: "Cena uzbeka" }
-    ],
-    gps: [
-      { name: "CBT Arslanbob", lat: 41.3311, lng: 72.9389 }
-    ],
-    warnings: [],
-    accommodation: "Homestay Arslanbob (€8-12pp)"
+    accommodation: "Guesthouse At-Bashy"
   },
 
   // ── Giorno 13 ────────────────────────────────────────────
   {
     day: 13,
-    date: "2025-06-11",
-    title: "Arslanbob → Osh",
-    route: "Arslanbob → Jalal-Abad → Osh",
-    km: 180,
-    driveTime: "3-4h",
+    date: "2026-06-11",
+    title: "At-Bashy → Kazarman → Arslanbob",
+    route: "At-Bashy → Kazarman → Arslanbob (STRADA PIÙ SELVAGGIA DEL KIRGHIZISTAN)",
+    km: 500,
+    driveTime: "10-12h GIORNATA INTERA",
     budget: 30,
     activities: [
-      { time: null, description: "Partenza da Arslanbob" },
-      { time: null, description: "Guida verso Osh via Jalal-Abad" },
-      { time: null, description: "Sulaiman-Too: montagna sacra UNESCO nel centro di Osh" },
-      { time: null, description: "Osh Bazaar (uno dei più grandi dell'Asia Centrale)" },
-      { time: null, description: "Preparazione per day trip in Uzbekistan (controllare documenti)" },
-      { time: null, description: "Cena a Osh" }
+      {
+        time: null,
+        description: "STRADA PIÙ SELVAGGIA DEL KIRGHIZISTAN",
+        details: {
+          why: "La strada da At-Bashy a Kazarman attraverso i passi sopra 3,300m è considerata una delle più impegnative del paese. Zero infrastruttura, fango, sassi, neve fino a metà giugno.",
+          duration: "10-12h NON-STOP",
+          tip: "Partire all'alba (06:00). Se piove, valutare di rimandare. Carburante minimo 500 km autonomia (pieno + tanica 20L)."
+        }
+      },
+      {
+        time: null,
+        description: "Nessuna stazione di servizio, nessun segnale telefonico",
+        details: {
+          why: "Da At-Bashy a Kazarman: 250 km di sterrato senza distributori, niente abitazioni, niente segnale. È la sezione più isolata dell'itinerario.",
+          tip: "Tanica 20L obbligatoria. Notifica qualcuno della partenza. Telefono satellitare (se hai) — altrimenti spera che la macchina regga."
+        }
+      },
+      { time: null, description: "Passi sopra 3,300m" },
+      {
+        time: null,
+        description: "Proseguire fino ad Arslanbob (foresta di noci)",
+        details: {
+          why: "Tappa intermedia: Kazarman è un piccolo villaggio sterrato a metà strada da At-Bashy ad Arslanbob, ultima possibilità di rifornimento (benzinaio piccolo) prima della scesa a sud. Arslanbob è la foresta di noci selvatiche più grande del mondo (60,000 ettari).",
+          duration: "Kazarman → Arslanbob: 3-4h",
+          cost: "Homestay CBT Arslanbob: 800-1200 KGS persona con cena",
+          tip: "Kazarman ha solo guesthouse base se sei troppo stanco per continuare. Stagione noci settembre-ottobre. Cultura: villaggio musulmano uzbeko, vesti modesti, niente alcol pubblicamente."
+        }
+      }
+    ],
+    gps: [
+      { name: "At-Bashy", lat: 41.1714, lng: 75.7986 },
+      { name: "Kazarman", lat: 41.4000, lng: 74.0333 },
+      { name: "CBT Arslanbob", lat: 41.3311, lng: 72.9389 }
+    ],
+    warnings: [
+      "⛽ SERBATOIO PIENO + TANICA! Nessuna stazione di servizio",
+      "📵 Nessun segnale telefonico",
+      "🕐 Partire all'alba"
+    ],
+    accommodation: "Homestay Arslanbob"
+  },
+
+  // ── Giorno 14 ────────────────────────────────────────────
+  {
+    day: 14,
+    date: "2026-06-12",
+    title: "Arslanbob → Osh → Bishkek",
+    route: "Arslanbob → Osh → Bishkek (o volo Osh → Bishkek)",
+    km: 600,
+    driveTime: "10h+ (o 1h volo)",
+    budget: 40,
+    activities: [
+      {
+        time: null,
+        description: "Mattina: Big Waterfall hike (80m, 1-2h)",
+        details: {
+          why: "Cascata principale di Arslanbob, 80m di salto in foresta di noci selvatiche. Trail facile, ben segnato.",
+          duration: "1.5-2h andata e ritorno",
+          cost: "Ingresso parco ~80 KGS",
+          tip: "Best time: mattina presto (luce + freschezza). C'è anche Small Waterfall (35m, 30 min hike) e Holy Lake (3h hike, sacro per gli uzbeki di Arslanbob)."
+        }
+      },
+      {
+        time: null,
+        description: "Guida verso Osh: Sulaiman-Too (UNESCO), Osh Bazaar",
+        details: {
+          why: "Sulaiman-Too: montagna sacra al centro di Osh, patrimonio UNESCO dal 2009, luogo di pellegrinaggio da 3000 anni. Osh Bazaar: il più antico dell'Asia Centrale, 2000 anni di storia. NON confondere con Osh Bazaar di Bishkek.",
+          duration: "Sulaiman-Too 1-2h, Bazaar 1-2h",
+          cost: "Sulaiman 50 KGS + 30 KGS museo (in grotta)",
+          tip: "Sulaiman: salita 30 min su scalini, vista 360° su Osh. Atmosfera spirituale al venerdì. Bazaar: contrattazione obbligatoria (parti dal 50%), prova samsa appena fuori dal tandoor (leggendaria)."
+        }
+      },
+      {
+        time: null,
+        description: "Sera: guida o volo Osh → Bishkek (o restare a Osh, volo giorno dopo)",
+        details: {
+          why: "Volo Osh-Bishkek: 1h, ~2500-4000 KGS con Avia Traffic o Tez Jet. Guida: 600 km, 10-12h, strada di montagna (Too-Ashuu Pass 3,150m). Restituzione macchina solo a Bishkek.",
+          tip: "Se hai macchina noleggio Russian Troika devi guidare comunque. Considera notte a Toktogul a metà strada. Evita di guidare di notte sul Too-Ashuu — animali, nebbia, ghiaccio."
+        }
+      }
     ],
     gps: [
       { name: "CBT Arslanbob", lat: 41.3311, lng: 72.9389 },
       { name: "Sulaiman-Too Osh", lat: 40.5278, lng: 72.7964 },
       { name: "Osh Bazaar", lat: 40.5333, lng: 72.8000 }
     ],
-    warnings: ["📋 Verificare documenti per Uzbekistan (passaporto, eventuale visto)"],
-    accommodation: "Hotel/Guesthouse Osh (€10-15pp)"
-  },
-
-  // ── Giorno 14 ────────────────────────────────────────────
-  {
-    day: 14,
-    date: "2025-06-12",
-    title: "Uzbekistan Day Trip + Drive Nord",
-    route: "Osh → Dostuk Border → Margilan → Osh → Toktogul",
-    km: 350,
-    driveTime: "6-7h totali",
-    budget: 45,
-    activities: [
-      { time: null, description: "Mattina presto: confine Dostuk (Osh → Uzbekistan)" },
-      { time: null, description: "Margilan: fabbrica seta Yodgorlik (artigianato tradizionale)" },
-      { time: null, description: "Kumtepa Bazaar (giovedì! — mercato settimanale autentico)" },
-      { time: null, description: "Rientro a Osh entro le 15:00" },
-      { time: null, description: "Guida verso nord: Osh → Toktogul" },
-      { time: null, description: "Arrivo Toktogul sera" }
-    ],
-    gps: [
-      { name: "Confine Dostuk", lat: 40.5167, lng: 72.6333 },
-      { name: "Margilan", lat: 40.4700, lng: 71.7200 },
-      { name: "Toktogul", lat: 41.8747, lng: 72.9422 }
-    ],
-    warnings: [
-      "📋 Portare passaporto! Attraversamento confine internazionale",
-      "💱 Cambiare UZS al confine o a Margilan (1 EUR ≈ 13,500 UZS)",
-      "🕐 Rientrare a Osh entro le 15:00 per avere tempo di guidare verso Toktogul",
-      "📅 Giovedì = giorno del Kumtepa Bazaar a Margilan!"
-    ],
-    accommodation: "Guesthouse Toktogul (€8-10pp)"
-  },
-
-  // ── Giorno 15 ────────────────────────────────────────────
-  {
-    day: 15,
-    date: "2025-06-13",
-    title: "Toktogul → Bishkek",
-    route: "Toktogul → Suusamyr Valley → Too-Ashuu Pass → Bishkek",
-    km: 350,
-    driveTime: "6-7h",
-    budget: 35,
-    activities: [
-      { time: null, description: "Partenza da Toktogul" },
-      { time: null, description: "Toktogul Reservoir: spot drone 🥉 (lago artificiale spettacolare)" },
-      { time: null, description: "Suusamyr Valley (valle verde, pascoli)" },
-      { time: null, description: "Too-Ashuu Pass (3,150m — tunnel e tornanti)" },
-      { time: null, description: "Discesa verso Bishkek" },
-      { time: null, description: "Restituzione auto a Russian Troika" },
-      { time: null, description: "Cena di addio: Supara Ethno Complex (cucina kirghiza tradizionale)" }
-    ],
-    gps: [
-      { name: "Toktogul Reservoir", lat: 41.7500, lng: 72.9500 },
-      { name: "Too-Ashuu Pass", lat: 42.3833, lng: 73.8167 },
-      { name: "Bishkek centro", lat: 42.8746, lng: 74.5698 }
-    ],
-    warnings: [
-      "⛽ Fare benzina a Toktogul",
-      "🏔️ Too-Ashuu Pass 3,150m — possibile neve/ghiaccio",
-      "🚗 Controllare orario restituzione auto"
-    ],
-    accommodation: "Guesthouse Bishkek o aeroporto (€10-15pp)"
+    warnings: [],
+    accommodation: "Bishkek o Osh"
   }
 ];
 
-
+/* ============================================================
+   TASK 3.2 — PHRASES (Frasario)
 /* ============================================================
    TASK 3.2 — PHRASES (Frasario)
    ============================================================ */
@@ -611,7 +990,42 @@ var PHRASES = [
   { category: "strada", it: "Dritto", kg: "Түз", ru: "Прямо", pronunciation: "Tuz / Prya-ma" },
   { category: "strada", it: "Torna indietro", kg: "Артка кайт", ru: "Назад", pronunciation: "Art-ka kait / Na-zad" },
   { category: "strada", it: "Vicino", kg: "Жакын", ru: "Близко", pronunciation: "Ja-kyn / Bliz-ka" },
-  { category: "strada", it: "Lontano", kg: "Алыс", ru: "Далеко", pronunciation: "A-lys / Da-lye-ko" }
+  { category: "strada", it: "Lontano", kg: "Алыс", ru: "Далеко", pronunciation: "A-lys / Da-lye-ko" },
+
+  // ── Sopravvivenza ──
+  { category: "sopravvivenza", it: "Asciutto", kg: "Кургак", ru: "Сухой", pronunciation: "Kur-gak / Su-khoy" },
+  { category: "sopravvivenza", it: "Bagnato", kg: "Нымдуу", ru: "Мокрый", pronunciation: "Nym-duu / Mo-kry" },
+  { category: "sopravvivenza", it: "Fuoco", kg: "От", ru: "Огонь", pronunciation: "Ot / A-gon" },
+  { category: "sopravvivenza", it: "Legna", kg: "Отун", ru: "Дрова", pronunciation: "O-tun / Dra-va" },
+  { category: "sopravvivenza", it: "Freddo", kg: "Суук", ru: "Холодно", pronunciation: "Suu-k / Kho-lod-na" },
+  { category: "sopravvivenza", it: "Caldo", kg: "Ысык", ru: "Жарко", pronunciation: "Y-syk / Zhar-ka" },
+  { category: "sopravvivenza", it: "Passaggio (autostop)", kg: "Мени алып кетиңизчи", ru: "Подвезите, пожалуйста", pronunciation: "Me-ni a-lyp ke-ti-niz-chi / Pod-ve-zi-tye pa-zhal-sta" },
+  { category: "sopravvivenza", it: "Dove vai?", kg: "Кайда барасыз?", ru: "Куда едете?", pronunciation: "Kai-da ba-ra-syz? / Ku-da ye-dye-tye?" },
+  { category: "sopravvivenza", it: "Posso venire con voi?", kg: "Силер менен бара алабызбы?", ru: "Можно с вами?", pronunciation: "Si-ler me-nen ba-ra a-la-byz-by? / Mozh-na s va-mi?" },
+  { category: "sopravvivenza", it: "Quanto vuoi?", kg: "Канча сурайсыз?", ru: "Сколько хотите?", pronunciation: "Kan-cha su-ray-syz? / Skol-ka kha-ti-tye?" },
+
+  // ── Benzina ──
+  { category: "benzina", it: "Dov'è il benzinaio più vicino?", kg: "Жакынкы бензин куюучу жер кайда?", ru: "Где ближайшая заправка?", pronunciation: "Ja-kyn-ky ben-zin ku-yuu-chu jer kai-da? / Gdye bli-zhay-sha-ya za-prav-ka?" },
+  { category: "benzina", it: "Dove posso fare benzina?", kg: "Кайда бензин куям?", ru: "Где можно заправиться?", pronunciation: "Kai-da ben-zin ku-yam? / Gdye mozh-na za-pra-vit-sya?" },
+  { category: "benzina", it: "Il pieno, per favore", kg: "Толтуруңуз", ru: "Полный бак, пожалуйста", pronunciation: "Tol-tu-ru-nuz / Pol-ny bak pa-zhal-sta" },
+  { category: "benzina", it: "Quanto manca alla prossima benzina?", kg: "Кийинки бензин куюучу жерге канча калды?", ru: "Сколько до следующей заправки?", pronunciation: "Ki-yin-ki ben-zin jer-ge kan-cha kal-dy? / Skol-ka da slye-du-yu-shchey za-prav-ki?" },
+  { category: "benzina", it: "AI-95 per favore", kg: "АИ-95, сураныч", ru: "АИ-95, пожалуйста", pronunciation: "A-I dye-vya-no-sta pyat, su-ra-nych / pa-zhal-sta" },
+  { category: "benzina", it: "Quanti litri?", kg: "Канча литр?", ru: "Сколько литров?", pronunciation: "Kan-cha litr? / Skol-ka lit-rov?" },
+  { category: "benzina", it: "La benzina è finita", kg: "Бензин бүттү", ru: "Бензин закончился", pronunciation: "Ben-zin but-tu / Ben-zin za-kon-chil-sya" },
+
+  // ── Parolacce 🤬 ──
+  { category: "parolacce", it: "Cazzo!", kg: "Тиги!", ru: "Блядь!", pronunciation: "Ti-gi! / Blyad!" },
+  { category: "parolacce", it: "Merda!", kg: "Бок!", ru: "Дерьмо!", pronunciation: "Bok! / Dyer-mo!" },
+  { category: "parolacce", it: "Vaffanculo!", kg: "Башыңа тий!", ru: "Пошёл нахуй!", pronunciation: "Ba-shy-na tiy! / Pa-shol na-khuy!" },
+  { category: "parolacce", it: "Figlio di puttana", kg: "Канжалак", ru: "Сукин сын", pronunciation: "Kan-zha-lak / Su-kin syn" },
+  { category: "parolacce", it: "Stronzo", kg: "Бокмурун", ru: "Мудак", pronunciation: "Bok-mu-run / Mu-dak" },
+  { category: "parolacce", it: "Idiota", kg: "Акмак", ru: "Дурак / Идиот", pronunciation: "Ak-mak / Du-rak" },
+  { category: "parolacce", it: "Sei ubriaco?", kg: "Мас болдуңбу?", ru: "Ты пьяный?", pronunciation: "Mas bol-dun-bu? / Ty pya-ny?" },
+  { category: "parolacce", it: "Non rompere le palle", kg: "Тынч кой!", ru: "Не доставай!", pronunciation: "Tynch koy! / Nye da-sta-vay!" },
+  { category: "parolacce", it: "Che cazzo fai?", kg: "Эмне кылып жатасың?!", ru: "Какого хрена?!", pronunciation: "Em-ne ky-lyp zha-ta-syn?! / Ka-ko-va khre-na?!" },
+  { category: "parolacce", it: "Fottiti", kg: "Өлүп кет!", ru: "Иди нахуй!", pronunciation: "O-lup ket! / I-di na-khuy!" },
+  { category: "parolacce", it: "Bastardo", kg: "Харамзаада", ru: "Ублюдок", pronunciation: "Kha-ram-zaa-da / Ub-lyu-dok" },
+  { category: "parolacce", it: "Coglione", kg: "Жинди", ru: "Долбоёб", pronunciation: "Zhin-di / Dol-bo-yob" }
 ];
 
 
@@ -757,7 +1171,7 @@ var CHECKLIST = {
 
 var WAYPOINTS = [
   // ── POI / Trailhead waypoints ─────────────────────────────
-  { day: 1,  type: "poi",       name: "Aeroporto Manas",            lat: 43.0553, lng: 74.4776 },
+  { day: 1,  type: "poi",       name: "Aeroporto Manas (BSZ)",       lat: 43.0553, lng: 74.4776 },
   { day: 1,  type: "poi",       name: "Osh Bazaar Bishkek",         lat: 42.8700, lng: 74.5900 },
   { day: 1,  type: "poi",       name: "Piazza Ala-Too",             lat: 42.8746, lng: 74.5698 },
   { day: 2,  type: "trailhead", name: "Ala-Archa NP",               lat: 42.6464, lng: 74.4847 },
@@ -820,38 +1234,70 @@ var EMERGENCY_CONTACTS = [
 
 var DRONE_INFO = {
   regolamenti: [
-    "DJI Mini 2 (<250g) — nessuna registrazione richiesta in Kirghizistan",
-    "Altitudine massima consigliata: 120m AGL (above ground level)",
-    "Non volare sopra persone o assembramenti",
-    "Non volare vicino ad aeroporti (raggio 5km)",
-    "Non volare sopra installazioni militari o governative",
-    "Rispettare la privacy delle persone",
-    "Chiedere sempre permesso prima di volare vicino a yurte o villaggi",
-    "Portare sempre batterie di scorta (il freddo riduce l'autonomia)"
+    "⚠️ NUOVA LEGGE 2026: dal 1° gennaio 2026 il Kirghizistan ha introdotto regolamentazione obbligatoria per UAV — non è più \"non regolamentato\".",
+    "📋 La nuova legge richiede registrazione del drone presso la State Civil Aviation Agency (SCAA) e autorizzazione (one-time o annuale).",
+    "❓ Per turisti stranieri con drone <250g (DJI Mini 2): la procedura per visitatori NON è ancora chiara. Contatta la SCAA prima del viaggio per chiedere conferma.",
+    "📧 Contatto SCAA — UAV Sector: iskenderumetbaev@gmail.com — Tel: +996 (312) 25 17 51",
+    "📄 Sito ufficiale + PDF regolamento: caa.kg/en/activity/general-aviation-and-uas-sector-uav",
+    "🟡 Importazione: dichiarare il drone in dogana all'arrivo (modulo doganale obbligatorio per oggetti di valore). Conservare la dichiarazione fino all'uscita.",
+    "🔴 Vietato volo: città, edifici governativi, basi militari, aeroporti (5 km), zone confine (Cina, Tagikistan, Uzbekistan)",
+    "🔴 Kel-Suu, Sary-Jaz, Inylchek: zona confine cinese — chiedere prima alla guida, anche con autorizzazione",
+    "Altitudine massima consigliata: 120m AGL",
+    "Non volare sopra persone, yurte o villaggi senza permesso",
+    "Portare batterie di scorta (il freddo riduce l'autonomia fino al 30%)",
+    "🟢 Fonte primaria: Times of Central Asia (17/02/2026) e SCAA. ⚠️ La scheda Farnesina (20/03/2026) e drone-laws.com NON sono aggiornati."
   ],
   noFlyZones: [
-    "Aeroporto Manas (Bishkek) — raggio 5km",
+    "Aeroporto Manas BSZ (Bishkek) — raggio 5km",
     "Aeroporto Osh — raggio 5km",
-    "Basi militari (non sempre segnalate)",
-    "Zone di confine (specialmente vicino a Cina e Uzbekistan)",
-    "Kel-Suu: zona di confine — chiedere alla guida prima di volare"
+    "Centri città (Bishkek, Karakol, Naryn, Osh) — divieto generale",
+    "Edifici governativi e basi militari (non sempre segnalate)",
+    "Zone di confine — Cina (Kel-Suu, Sary-Jaz, Inylchek), Uzbekistan, Tagikistan",
+    "Kel-Suu: zona di confine cinese — necessita autorizzazione + chiedere alla guida"
   ],
   bestSpots: [
-    { rank: "🥇", name: "Kel-Suu", day: 9, description: "Canyon + lago turchese, paesaggio unico" },
-    { rank: "🥇", name: "Son-Kul", day: 7, description: "Yurte, mandrie, lago a 3,000m — luce alba/tramonto" },
-    { rank: "🥈", name: "Fairy Tale Canyon", day: 5, description: "Formazioni rocciose rosse, contrasto con lago" },
-    { rank: "🥈", name: "Jyrgalan Valley", day: 3, description: "Valle verde con montagne innevate" },
-    { rank: "🥉", name: "Barskoon Valley", day: 5, description: "Cascata e valle profonda" },
-    { rank: "🥉", name: "Tash Rabat", day: 8, description: "Caravanserraglio isolato in valle verde" },
-    { rank: "🥉", name: "Toktogul Reservoir", day: 15, description: "Lago artificiale tra montagne" }
+    { rank: "🥇", name: "Son-Kul Lake",         day: 7,  description: "Yurte, mandrie, lago a 3.000m — luce alba/tramonto. Spot più iconico per drone in KG." },
+    { rank: "🥇", name: "Kel-Suu Lake",         day: 9,  description: "Canyon + lago turchese, paesaggio alpino unico. ⚠️ Zona confine — distanza dal sud." },
+    { rank: "🥈", name: "Karakol Gorge",        day: 3,  description: "Gola spettacolare vicino Karakol. Pareti verticali, fiume tra le montagne." },
+    { rank: "🥈", name: "Barskoon Waterfall",   day: 5,  description: "Cascata + gola, accesso libero. Volo basso tra le pareti." },
+    { rank: "🥈", name: "Ak-Say Canyon",        day: 5,  description: "Canyon direttamente sul lago Issyk-Kul. Spettacolare al golden hour." },
+    { rank: "🥈", name: "Fairy Tale Canyon",    day: 5,  description: "Formazioni rocciose rosse, contrasto con lago Issyk-Kul. Tramonto top." },
+    { rank: "🥈", name: "Eshenkul Lake",        day: 7,  description: "Lago alpino off-the-beaten-path zona Naryn. Pochissimi turisti." },
+    { rank: "🥈", name: "Arstanbap (Arslanbob)",day: 14, description: "Foresta di noci più grande al mondo + cascate. Hike + drone foliage." },
+    { rank: "🥈", name: "Tulpar Kol",           day: 10, description: "Lago alpino zona Pamir-Alay (sud), accampamento alpinisti, vista su Pik Lenin." },
+    { rank: "🥉", name: "Jyrgalan Valley",      day: 3,  description: "Valle verde con montagne innevate. Trail multipli." },
+    { rank: "🥉", name: "Tash Rabat",           day: 8,  description: "Caravanserraglio isolato in valle verde. Atmosfera Via della Seta." },
+    { rank: "🥉", name: "Toktogul Reservoir",   day: 15, description: "Lago artificiale tra montagne." }
   ],
   altitudeTips: [
-    "Sopra 3,000m le batterie si scaricano più velocemente (fino al 30% in meno)",
+    "Sopra 3.000m le batterie si scaricano più velocemente (fino al 30% in meno)",
     "Il freddo riduce ulteriormente l'autonomia — tenere le batterie al caldo nel giubbotto",
     "L'aria rarefatta riduce la portanza — il drone consuma più energia per hovering",
     "Usare filtri ND (ND16/ND32) per la luce intensa ad alta quota",
     "Attenzione ai venti improvvisi in quota — controllare prima di decollare",
-    "A Son-Kul e Kel-Suu (3,000-3,500m) prevedere voli più brevi"
+    "A Son-Kul e Kel-Suu (3.000-3.500m) prevedere voli più brevi"
+  ],
+  topPlaces: [
+    { rank: 1, name: "Song-Kul Lake",   desc: "Dormire in yurta, cavalcare nei pascoli infiniti, vita nomade autentica." },
+    { rank: 2, name: "Kel-Suu Lake",    desc: "Lago alpino nascosto tra scogliere drammatiche. Tra i posti più mozzafiato dell'Asia Centrale." },
+    { rank: 3, name: "Altyn Arashan",   desc: "Sorgenti termali, viste sul Tian Shan, trekking spettacolari." },
+    { rank: 4, name: "Jeti-Oguz",       desc: "Formazioni rocciose rosse, valli verdi, cascate. Perfetto per fotografia." },
+    { rank: 5, name: "Issyk-Kul Lake",  desc: "Secondo lago alpino più grande al mondo. Spiagge, canyon, cacciatori d'aquile, tramonti." }
+  ],
+  stargazingSpots: [
+    { name: "Kel-Suu Lake",     region: "Naryn",     note: "Zero inquinamento luminoso, 3.500m. Top assoluto." },
+    { name: "Tash-Rabat",       region: "Naryn",     note: "Caravanserraglio in valle remota, cielo stellato leggendario." },
+    { name: "Altyn-Arashan",    region: "Issyk-Kul", note: "Hot springs di notte sotto le stelle." },
+    { name: "Ala-Kul Lake",     region: "Issyk-Kul", note: "3.900m, dopo trek di 2-3 giorni. Stelle epiche." },
+    { name: "Song-Kul Lake",    region: "Naryn",     note: "Dalle yurte, cielo aperto a 360°. Notti fredde." },
+    { name: "Kok-Kiya Valley",  region: "Naryn",     note: "Off-the-beaten-track, valle isolata zona Naryn." }
+  ],
+  topYurtStays: [
+    { rank: 1, name: "Kok-Kiya Valley", note: "Off-the-beaten-track. Valle isolata, esperienza autentica." },
+    { rank: 2, name: "Kol-Ukok Lake",   note: "Lago alpino, raggiungibile a cavallo da Kochkor." },
+    { rank: 3, name: "Song-Kul Lake",   note: "Il classico. Yurta camp diversi tra cui scegliere (Jyrgal, Nomads Dream)." },
+    { rank: 4, name: "Kilemche Valley", note: "Valle remota tra Kochkor e Song-Kul." },
+    { rank: 5, name: "Kel-Suu Lake",    note: "Yurta camp prima del lago. ⚠️ Permesso confine obbligatorio." }
   ]
 };
 
